@@ -153,7 +153,7 @@ function Hero() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:scale-[1.03]"
           >
-            <MessageCircle className="h-5 w-5" /> Quero um orçamento
+            <WhatsAppIcon className="h-5 w-5" /> Quero um orçamento
           </a>
           <a
             href="#formatos"
@@ -464,7 +464,7 @@ function FinalCTA() {
             rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:scale-[1.03]"
           >
-            <MessageCircle className="h-5 w-5" /> Falar no WhatsApp
+            <WhatsAppIcon className="h-5 w-5" /> Falar no WhatsApp
           </a>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-white/80">
             <span className="inline-flex items-center gap-2">
@@ -529,7 +529,7 @@ function Footer() {
               <Instagram className="h-5 w-5" />
             </SocialLink>
             <SocialLink href={WHATSAPP_URL} label="WhatsApp">
-              <MessageCircle className="h-5 w-5" />
+              <WhatsAppIcon className="h-5 w-5" />
             </SocialLink>
           </div>
         </div>
@@ -574,7 +574,7 @@ function FloatingWhatsApp() {
       aria-label="Falar no WhatsApp"
       className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[var(--shadow-elegant)] ring-4 ring-[#25D366]/20 transition hover:scale-110"
     >
-      <MessageCircle className="h-7 w-7" />
+      <WhatsAppIcon className="h-7 w-7" />
       <span className="absolute -top-1 -right-1 flex h-3 w-3">
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#25D366] opacity-75" />
         <span className="relative inline-flex h-3 w-3 rounded-full bg-[#25D366]" />
