@@ -98,6 +98,7 @@ function Header() {
           <a href="#formatos" className="transition hover:text-foreground">Formatos</a>
           <a href="#beneficios" className="transition hover:text-foreground">Benefícios</a>
           <a href="#depoimentos" className="transition hover:text-foreground">Depoimentos</a>
+          <a href="#faq" className="transition hover:text-foreground">FAQ</a>
           <a href="#contato" className="transition hover:text-foreground">Contato</a>
         </nav>
         <a
