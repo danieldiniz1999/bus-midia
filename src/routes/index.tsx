@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  Bus,
   MapPin,
   Phone,
   Youtube,
@@ -17,6 +16,9 @@ import {
 import heroBus from "../assets/hero-bus.jpg";
 import backbusImg from "../assets/backbus.jpg";
 import busdoorImg from "../assets/busdoor.jpg";
+import logoAsset from "../assets/busmidia-logo.png.asset.json";
+
+const LOGO_URL = logoAsset.url;
 
 const WHATSAPP_NUMBER = "5585987326044";
 const WHATSAPP_MESSAGE =
@@ -65,17 +67,13 @@ function Index() {
 function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-lg">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <a href="#top" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-elegant)]">
-            <Bus className="h-5 w-5" />
-          </div>
-          <div className="leading-tight">
-            <div className="text-sm font-bold tracking-tight">BusMidia</div>
-            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
-              Publicidade Móvel
-            </div>
-          </div>
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
+        <a href="#top" className="flex items-center">
+          <img
+            src={LOGO_URL}
+            alt="BusMidia - Publicidade em Ônibus"
+            className="h-10 w-auto sm:h-12"
+          />
         </a>
         <nav className="hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">
           <a href="#quem-somos" className="hover:text-foreground">Quem somos</a>
