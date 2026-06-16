@@ -101,62 +101,74 @@ function Hero() {
         className="absolute inset-0 -z-10"
         style={{ background: "var(--gradient-hero)" }}
       />
-      <div className="absolute inset-0 -z-10 opacity-30 mix-blend-overlay">
-        <img
-          src={heroBus}
-          alt=""
-          className="h-full w-full object-cover"
-          width={1536}
-          height={1024}
-        />
-      </div>
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 md:py-28 lg:grid-cols-2 lg:py-36">
-        <div className="text-primary-foreground">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-widest backdrop-blur">
-            <Sparkles className="h-3.5 w-3.5" /> Mídia em movimento • Fortaleza
-          </span>
-          <h1 className="mt-6 text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
-            Sua marca rodando <span className="text-primary">a cidade inteira</span> todos os dias.
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-white/80">
-            Há mais de uma década transformando ônibus em outdoors urbanos.
-            Anuncie em <strong>Busdoor</strong> e <strong>Backbus</strong> e alcance
-            milhares de pessoas por toda Fortaleza.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:scale-[1.03]"
-            >
-              <MessageCircle className="h-5 w-5" /> Quero um orçamento
-            </a>
-            <a
-              href="#formatos"
-              className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/5 px-6 py-3 text-base font-semibold text-white backdrop-blur transition hover:bg-white/10"
-            >
-              Ver formatos
-            </a>
-          </div>
-          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-white/70">
-            {[
-              "Cobertura em toda Fortaleza",
-              "Alta visibilidade diária",
-              "Formatos para todos os tamanhos de marca",
-            ].map((t) => (
-              <div key={t} className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-primary" /> {t}
-              </div>
-            ))}
+      <div className="pointer-events-none absolute -top-32 -right-32 -z-10 h-[28rem] w-[28rem] rounded-full bg-primary/30 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-40 -left-20 -z-10 h-[28rem] w-[28rem] rounded-full bg-secondary/60 blur-3xl" />
+
+      <div className="mx-auto max-w-5xl px-4 pt-16 pb-10 text-center sm:px-6 md:pt-24">
+        <div className="flex justify-center">
+          <div className="rounded-2xl bg-white/95 px-6 py-4 shadow-[var(--shadow-elegant)] ring-1 ring-white/30">
+            <img
+              src={LOGO_URL}
+              alt="BusMidia - Publicidade em Ônibus"
+              className="h-14 w-auto sm:h-16"
+            />
           </div>
         </div>
-        <div className="relative hidden lg:block">
-          <div className="absolute -inset-4 rounded-3xl bg-primary/30 blur-3xl" />
+
+        <span className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-widest text-white backdrop-blur">
+          <Sparkles className="h-3.5 w-3.5 text-primary" /> Mídia em movimento • Fortaleza/CE
+        </span>
+
+        <h1 className="mt-6 text-balance text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+          Sua marca rodando{" "}
+          <span className="text-primary">a cidade inteira</span>{" "}
+          todos os dias.
+        </h1>
+
+        <p className="mx-auto mt-6 max-w-2xl text-pretty text-base text-white/80 sm:text-lg">
+          Há mais de uma década transformando ônibus em outdoors urbanos.
+          Anuncie em <strong className="text-white">Busdoor</strong> e{" "}
+          <strong className="text-white">Backbus</strong> e alcance milhares de
+          pessoas por toda Fortaleza.
+        </p>
+
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:scale-[1.03]"
+          >
+            <MessageCircle className="h-5 w-5" /> Quero um orçamento
+          </a>
+          <a
+            href="#formatos"
+            className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/5 px-7 py-3.5 text-base font-semibold text-white backdrop-blur transition hover:bg-white/10"
+          >
+            Ver formatos
+          </a>
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-white/70">
+          {[
+            "Cobertura em toda Fortaleza",
+            "Alta visibilidade diária",
+            "Formatos para toda marca",
+          ].map((t) => (
+            <div key={t} className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-primary" /> {t}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-6xl px-4 pb-20 sm:px-6 md:pb-28">
+        <div className="relative">
+          <div className="absolute -inset-4 rounded-[2rem] bg-primary/20 blur-3xl" />
           <img
             src={heroBus}
             alt="Ônibus com publicidade no backbus rodando em avenida de Fortaleza"
-            className="relative rounded-3xl border border-white/10 object-cover shadow-2xl"
+            className="relative aspect-[16/8] w-full rounded-3xl border border-white/10 object-cover shadow-2xl"
             width={1536}
             height={1024}
           />
@@ -165,6 +177,7 @@ function Hero() {
     </section>
   );
 }
+
 
 function Stats() {
   const items = [
