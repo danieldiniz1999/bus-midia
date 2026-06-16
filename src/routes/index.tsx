@@ -477,7 +477,121 @@ function Process() {
   );
 }
 
+/* ---------------- Testimonials & Cases ---------------- */
+
+function Testimonials() {
+  const testimonials = [
+    {
+      name: "Rafael Lima",
+      role: "Diretor de Marketing",
+      company: "Rede Supermercados Pague Menos",
+      quote:
+        "A campanha em Backbus virou conversa nas lojas. Em duas semanas vimos aumento real de fluxo nas unidades das avenidas atendidas.",
+      rating: 5,
+    },
+    {
+      name: "Carla Mendes",
+      role: "Fundadora",
+      company: "Studio Bem Estar",
+      quote:
+        "Equipe atenciosa do briefing à instalação. O relatório fotográfico foi um diferencial — mostrei aos sócios e fechamos renovação imediata.",
+      rating: 5,
+    },
+    {
+      name: "Diego Araújo",
+      role: "Gerente Comercial",
+      company: "Construtora Horizonte",
+      quote:
+        "Trocamos parte da verba de outdoor por Busdoor e o alcance praticamente dobrou. Hoje é item fixo no nosso plano de mídia.",
+      rating: 5,
+    },
+  ];
+
+  const cases = [
+    { brand: "Varejo", metric: "+38%", label: "fluxo em loja após 30 dias" },
+    { brand: "Imobiliário", metric: "2,1M", label: "impactos estimados/mês" },
+    { brand: "Educação", metric: "+62%", label: "buscas pela marca no período" },
+  ];
+
+  return (
+    <section id="depoimentos" className="bg-secondary text-secondary-foreground">
+      <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
+        <div className="mx-auto max-w-2xl text-center">
+          <SectionEyebrow tone="dark">Depoimentos & Cases</SectionEyebrow>
+          <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
+            Marcas que já rodam Fortaleza com a gente.
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-base text-secondary-foreground/70">
+            Resultados reais de quem confiou na BusMidia para colocar a
+            mensagem na rua.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {testimonials.map((t) => (
+            <figure
+              key={t.name}
+              className="group relative flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:-translate-y-1 hover:border-primary/40"
+            >
+              <Quote
+                className="absolute right-6 top-6 h-10 w-10 text-primary/20"
+                aria-hidden="true"
+              />
+              <div className="flex gap-1 text-primary">
+                {Array.from({ length: t.rating }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-current" />
+                ))}
+              </div>
+              <blockquote className="mt-5 flex-1 text-base leading-relaxed text-secondary-foreground/90">
+                “{t.quote}”
+              </blockquote>
+              <figcaption className="mt-6 border-t border-white/10 pt-5">
+                <div className="text-sm font-bold text-secondary-foreground">
+                  {t.name}
+                </div>
+                <div className="text-xs text-secondary-foreground/60">
+                  {t.role} · {t.company}
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div className="mt-16">
+          <div className="mb-6 flex items-end justify-between gap-4">
+            <h3 className="text-xl font-bold text-secondary-foreground sm:text-2xl">
+              Cases em números
+            </h3>
+            <span className="hidden text-xs uppercase tracking-[0.25em] text-secondary-foreground/50 sm:inline">
+              Dados médios de campanhas recentes
+            </span>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-3">
+            {cases.map((c) => (
+              <div
+                key={c.brand}
+                className="rounded-2xl border border-primary/20 bg-gradient-to-br from-white/5 to-transparent p-7"
+              >
+                <div className="text-xs font-bold uppercase tracking-[0.25em] text-primary">
+                  {c.brand}
+                </div>
+                <div className="mt-3 text-4xl font-black text-secondary-foreground sm:text-5xl">
+                  {c.metric}
+                </div>
+                <div className="mt-2 text-sm text-secondary-foreground/70">
+                  {c.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ---------------- Final CTA ---------------- */
+
 
 function FinalCTA() {
   return (
