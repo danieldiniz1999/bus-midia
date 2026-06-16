@@ -4,16 +4,7 @@ import {
   Phone,
   Youtube,
   Instagram,
-  CheckCircle2,
-  Target,
-  TrendingUp,
-  Users,
-  Eye,
-  Route as RouteIcon,
-  Sparkles,
-  ArrowRight,
-  Star,
-  Quote,
+  ArrowUpRight,
 } from "lucide-react";
 import heroBus from "../assets/hero-bus.jpg";
 import backbusImg from "../assets/backbus.jpg";
@@ -61,11 +52,11 @@ export const Route = createFileRoute("/")({
 
 function LandingPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground antialiased">
+    <div className="min-h-screen bg-background font-sans text-foreground antialiased selection:bg-primary/30">
       <Header />
       <main>
         <Hero />
-        <Stats />
+        <Marquee />
         <About />
         <Formats />
         <Benefits />
@@ -83,30 +74,26 @@ function LandingPage() {
 
 function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-lg">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <a href="#top" className="flex items-center" aria-label="BusMidia - início">
-          <img
-            src={LOGO_URL}
-            alt="BusMidia - Publicidade em Ônibus"
-            className="h-10 w-auto sm:h-12"
-          />
+    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+        <a href="#top" className="flex items-center" aria-label="BusMidia">
+          <img src={LOGO_URL} alt="BusMidia" className="h-9 w-auto" />
         </a>
-        <nav className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
+        <nav className="hidden items-center gap-10 text-[13px] font-normal text-muted-foreground md:flex">
           <a href="#quem-somos" className="transition hover:text-foreground">Quem somos</a>
           <a href="#formatos" className="transition hover:text-foreground">Formatos</a>
           <a href="#beneficios" className="transition hover:text-foreground">Benefícios</a>
-          <a href="#depoimentos" className="transition hover:text-foreground">Depoimentos</a>
+          <a href="#depoimentos" className="transition hover:text-foreground">Clientes</a>
           <a href="#contato" className="transition hover:text-foreground">Contato</a>
         </nav>
         <a
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition hover:bg-foreground/90 sm:inline-flex"
+          className="hidden items-center gap-2 text-[13px] font-medium text-foreground transition hover:text-primary sm:inline-flex"
         >
-          <WhatsAppIcon className="h-4 w-4" />
           Orçamento
+          <ArrowUpRight className="h-3.5 w-3.5" />
         </a>
       </div>
     </header>
@@ -117,95 +104,53 @@ function Header() {
 
 function Hero() {
   return (
-    <section
-      id="top"
-      className="relative isolate overflow-hidden bg-secondary text-secondary-foreground"
-    >
-      <div
-        className="absolute inset-0 -z-10"
-        style={{ background: "var(--gradient-hero)" }}
-      />
-      <div className="pointer-events-none absolute -top-40 -right-40 -z-10 h-[32rem] w-[32rem] rounded-full bg-primary/20 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-32 -left-20 -z-10 h-[28rem] w-[28rem] rounded-full bg-primary/10 blur-3xl" />
-
-      <div className="mx-auto grid max-w-7xl gap-14 px-4 py-20 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:py-28">
-        <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            <Sparkles className="h-3.5 w-3.5" />
-            Publicidade em movimento
-          </span>
-
-          <h1 className="mt-6 text-balance text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-            Sua marca rodando{" "}
-            <span className="text-primary">Fortaleza inteira</span>{" "}
-            todos os dias.
-          </h1>
-
-          <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-secondary-foreground/75 sm:text-lg">
-            Há mais de uma década transformando ônibus em outdoors urbanos.
-            Anuncie em <strong className="text-primary">Busdoor</strong> e{" "}
-            <strong className="text-primary">Backbus</strong> e alcance
-            milhares de pessoas por toda a cidade.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:brightness-110"
-            >
-              <WhatsAppIcon className="h-5 w-5" />
-              Quero um orçamento
-              <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-            </a>
-            <a
-              href="#formatos"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-base font-semibold text-secondary-foreground backdrop-blur transition hover:bg-white/10"
-            >
-              Ver formatos
-            </a>
-          </div>
-
-          <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
-            {[
-              { v: "+3.000", l: "projetos" },
-              { v: "+250", l: "clientes" },
-              { v: "+220", l: "marcas" },
-            ].map((s) => (
-              <div key={s.l}>
-                <dt className="text-2xl font-black text-primary sm:text-3xl">{s.v}</dt>
-                <dd className="mt-1 text-xs uppercase tracking-widest text-secondary-foreground/60">
-                  {s.l}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-
-        <div className="relative">
-          <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-primary/15 blur-3xl" />
-          <div className="overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
-            <img
-              src={heroBus}
-              alt="Ônibus com publicidade backbus em avenida de Fortaleza"
-              className="aspect-[4/3] w-full object-cover"
-              width={1536}
-              height={1024}
-            />
-          </div>
-          <div className="absolute -bottom-6 left-6 right-6 rounded-2xl border border-primary/20 bg-background/95 p-5 shadow-xl backdrop-blur sm:left-10 sm:right-auto sm:w-72">
-            <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primary">
-                <Eye className="h-5 w-5" />
-              </div>
-              <div>
-                <div className="text-sm font-bold text-foreground">Alta visibilidade</div>
-                <div className="text-xs text-muted-foreground">
-                  Sua marca no campo de visão de toda a cidade
-                </div>
-              </div>
+    <section id="top" className="relative bg-background">
+      <div className="mx-auto max-w-6xl px-6 pt-20 pb-24 lg:pt-28 lg:pb-32">
+        <div className="grid gap-16 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7">
+            <Eyebrow>BusMidia — Fortaleza, CE</Eyebrow>
+            <h1 className="mt-8 font-serif text-5xl font-light leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+              Sua marca em{" "}
+              <em className="font-medium italic text-primary">movimento</em>,
+              <br className="hidden sm:block" /> por toda a cidade.
+            </h1>
+            <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
+              Há mais de uma década transformando ônibus urbanos em mídia de
+              alto impacto. Anuncie em Busdoor e Backbus e alcance milhares de
+              pessoas todos os dias.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-6">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 border-b border-foreground pb-2 text-sm font-medium tracking-wide text-foreground transition hover:border-primary hover:text-primary"
+              >
+                Solicitar orçamento
+                <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </a>
+              <a
+                href="#formatos"
+                className="text-sm font-normal text-muted-foreground transition hover:text-foreground"
+              >
+                Ver formatos
+              </a>
             </div>
+          </div>
+
+          <div className="lg:col-span-5">
+            <div className="overflow-hidden">
+              <img
+                src={heroBus}
+                alt="Ônibus com publicidade em avenida de Fortaleza"
+                className="aspect-[4/5] w-full object-cover grayscale transition duration-700 hover:grayscale-0"
+                width={1024}
+                height={1280}
+              />
+            </div>
+            <p className="mt-4 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+              Av. Bezerra de Menezes — Fortaleza
+            </p>
           </div>
         </div>
       </div>
@@ -213,32 +158,25 @@ function Hero() {
   );
 }
 
-/* ---------------- Stats ---------------- */
+/* ---------------- Marquee / Numbers ---------------- */
 
-function Stats() {
+function Marquee() {
   const items = [
-    { value: "+3.000", label: "projetos realizados", icon: Target },
-    { value: "+250", label: "clientes atendidos", icon: Users },
-    { value: "+220", label: "marcas divulgadas", icon: TrendingUp },
+    { v: "3.000+", l: "Projetos realizados" },
+    { v: "250+", l: "Clientes atendidos" },
+    { v: "220+", l: "Marcas divulgadas" },
+    { v: "10+", l: "Anos de estrada" },
   ];
   return (
-    <section className="border-y border-border bg-muted/50">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 py-12 sm:grid-cols-3 sm:px-6">
-        {items.map(({ value, label, icon: Icon }) => (
-          <div
-            key={label}
-            className="flex items-center justify-center gap-4 rounded-2xl border border-border bg-background px-6 py-5 shadow-sm"
-          >
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary">
-              <Icon className="h-6 w-6" />
+    <section className="border-y border-border">
+      <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-border md:grid-cols-4">
+        {items.map((s) => (
+          <div key={s.l} className="px-6 py-10 text-center">
+            <div className="font-serif text-4xl font-light text-foreground sm:text-5xl">
+              {s.v}
             </div>
-            <div>
-              <div className="text-2xl font-black leading-none text-foreground">
-                {value}
-              </div>
-              <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
-                {label}
-              </div>
+            <div className="mt-3 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+              {s.l}
             </div>
           </div>
         ))}
@@ -251,49 +189,44 @@ function Stats() {
 
 function About() {
   return (
-    <section id="quem-somos" className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
-      <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
-        <div>
-          <SectionEyebrow>Quem somos</SectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
-            Especialistas em transformar ônibus em mídia de alto impacto.
+    <section id="quem-somos" className="mx-auto max-w-6xl px-6 py-28 lg:py-36">
+      <div className="grid gap-20 lg:grid-cols-12 lg:items-start">
+        <div className="lg:col-span-5">
+          <Eyebrow>01 — Quem somos</Eyebrow>
+          <h2 className="mt-8 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">
+            Mídia urbana que <em className="italic text-primary">circula</em> com a sua marca.
           </h2>
+        </div>
+        <div className="lg:col-span-6 lg:col-start-7">
+          <p className="text-base leading-relaxed text-muted-foreground">
+            A BusMidia é uma agência cearense especializada em publicidade móvel
+            em ônibus urbanos. Com sede em Fortaleza, conectamos marcas a
+            milhares de pessoas todos os dias — levando sua mensagem para as
+            principais avenidas, bairros e pontos comerciais da cidade.
+          </p>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-            A <strong className="text-foreground">BusMidia</strong> é uma agência
-            cearense dedicada à publicidade móvel em ônibus urbanos. Com sede
-            em Fortaleza, conectamos marcas a milhares de pessoas todos os
-            dias, levando sua mensagem para as principais avenidas, bairros
-            e pontos comerciais da cidade.
+            Cuidamos da produção, instalação e gestão completa da campanha. Da
+            arte ao relatório final, para que sua marca tenha visibilidade real
+            — sem complicação.
           </p>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Cuidamos de produção, instalação e gestão completa da campanha —
-            da arte ao relatório final — para que sua marca tenha
-            visibilidade real, sem complicação.
-          </p>
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          <ul className="mt-10 divide-y divide-border border-y border-border">
             {[
               "Equipe própria de produção e instalação",
               "Atendimento consultivo e personalizado",
-              "Relatório fotográfico das campanhas",
+              "Relatório fotográfico de cada campanha",
               "Frota circulando por toda Fortaleza",
-            ].map((t) => (
-              <li key={t} className="flex items-start gap-2 text-sm text-foreground">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
+            ].map((t, i) => (
+              <li
+                key={t}
+                className="flex items-baseline gap-6 py-4 text-sm text-foreground"
+              >
+                <span className="font-serif text-xs text-primary">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <span>{t}</span>
               </li>
             ))}
           </ul>
-        </div>
-        <div className="relative">
-          <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-primary/10 blur-2xl" />
-          <img
-            src={busdoorImg}
-            alt="Ônibus com mídia busdoor circulando pela cidade"
-            className="aspect-[4/3] w-full rounded-3xl border border-border object-cover shadow-xl"
-            loading="lazy"
-            width={1024}
-            height={768}
-          />
         </div>
       </div>
     </section>
@@ -303,92 +236,67 @@ function About() {
 /* ---------------- Formats ---------------- */
 
 function Formats() {
+  const formats = [
+    {
+      tag: "Busdoor",
+      title: "Mídia lateral",
+      description:
+        "Painel fixado nas janelas traseiras laterais. Na altura do olhar de pedestres e motoristas, gera leitura excepcional em cruzamentos e semáforos.",
+      image: busdoorImg,
+    },
+    {
+      tag: "Backbus",
+      title: "Mídia traseira",
+      description:
+        "Ocupa toda a parte traseira do ônibus. Visto continuamente pelos veículos atrás, garante impacto prolongado durante todo o trajeto.",
+      image: backbusImg,
+    },
+  ];
   return (
-    <section id="formatos" className="bg-secondary text-secondary-foreground">
-      <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <SectionEyebrow tone="dark">Nossos formatos</SectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
-            Busdoor e Backbus — dois jeitos de colocar sua marca em movimento.
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-base text-secondary-foreground/70">
+    <section id="formatos" className="border-t border-border bg-secondary text-secondary-foreground">
+      <div className="mx-auto max-w-6xl px-6 py-28 lg:py-36">
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7">
+            <Eyebrow tone="dark">02 — Formatos</Eyebrow>
+            <h2 className="mt-8 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">
+              Dois formatos. Uma cidade <em className="italic text-primary">inteira</em> de alcance.
+            </h2>
+          </div>
+          <p className="text-sm text-secondary-foreground/60 lg:col-span-4 lg:col-start-9">
             Escolha o formato ideal para o seu objetivo. Ou combine os dois
-            e amplie o impacto da sua campanha.
+            para amplificar o impacto.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-2">
-          <FormatCard
-            tag="Busdoor"
-            title="Mídia lateral nas janelas do ônibus"
-            description="O Busdoor é o painel publicitário fixado nas laterais (geralmente nas janelas traseiras) dos ônibus urbanos. Por estar na altura do olhar de pedestres e motoristas, gera altíssima visibilidade em cruzamentos, semáforos e pontos de parada."
-            image={busdoorImg}
-            bullets={[
-              "Posição estratégica na lateral do veículo",
-              "Excelente leitura em ruas movimentadas",
-              "Ideal para promoções e branding",
-            ]}
-          />
-          <FormatCard
-            tag="Backbus"
-            title="Mídia na traseira do ônibus"
-            description="O Backbus ocupa a parte traseira do ônibus, sendo visto continuamente por motoristas e passageiros dos veículos atrás. Formato de impacto prolongado: enquanto o ônibus circula, sua marca está sempre no campo de visão de quem o segue."
-            image={backbusImg}
-            bullets={[
-              "Visualização contínua no trânsito",
-              "Grande área para destacar a marca",
-              "Alta retenção de mensagem",
-            ]}
-          />
+        <div className="mt-20 grid gap-16 md:grid-cols-2 md:gap-10">
+          {formats.map((f) => (
+            <article key={f.tag} className="group">
+              <div className="overflow-hidden">
+                <img
+                  src={f.image}
+                  alt={f.title}
+                  className="aspect-[4/3] w-full object-cover transition duration-[1200ms] group-hover:scale-[1.03]"
+                  loading="lazy"
+                  width={1024}
+                  height={768}
+                />
+              </div>
+              <div className="mt-8 flex items-baseline justify-between border-b border-white/10 pb-4">
+                <h3 className="font-serif text-2xl font-light text-secondary-foreground">
+                  {f.title}
+                </h3>
+                <span className="text-[11px] uppercase tracking-[0.3em] text-primary">
+                  {f.tag}
+                </span>
+              </div>
+              <p className="mt-5 max-w-md text-sm leading-relaxed text-secondary-foreground/70">
+                {f.description}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
-  );
-}
-
-function FormatCard({
-  tag,
-  title,
-  description,
-  image,
-  bullets,
-}: {
-  tag: string;
-  title: string;
-  description: string;
-  image: string;
-  bullets: string[];
-}) {
-  return (
-    <article className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur transition hover:-translate-y-1 hover:border-primary/40">
-      <div className="aspect-[16/10] overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-          loading="lazy"
-          width={1024}
-          height={768}
-        />
-      </div>
-      <div className="p-7">
-        <span className="inline-flex rounded-full bg-primary/15 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-primary">
-          {tag}
-        </span>
-        <h3 className="mt-4 text-xl font-bold text-secondary-foreground">{title}</h3>
-        <p className="mt-3 text-sm leading-relaxed text-secondary-foreground/70">
-          {description}
-        </p>
-        <ul className="mt-5 space-y-2 text-sm text-secondary-foreground/85">
-          {bullets.map((b) => (
-            <li key={b} className="flex items-start gap-2">
-              <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-              <span>{b}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </article>
   );
 }
 
@@ -396,46 +304,31 @@ function FormatCard({
 
 function Benefits() {
   const items = [
-    {
-      icon: Eye,
-      title: "Alta visibilidade",
-      text: "Sua marca exposta a milhares de pessoas em todo o trajeto do ônibus, todos os dias.",
-    },
-    {
-      icon: RouteIcon,
-      title: "Cobertura urbana",
-      text: "Atingimos diferentes bairros e perfis de público em uma única campanha.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Custo-benefício",
-      text: "Impacto comparável a outdoors fixos, com investimento mais inteligente.",
-    },
-    {
-      icon: Target,
-      title: "Mídia que se move",
-      text: "Enquanto outdoors esperam o público passar, o ônibus leva sua marca até ele.",
-    },
+    { t: "Alta visibilidade", d: "Sua marca exposta a milhares de pessoas em todo o trajeto, todos os dias." },
+    { t: "Cobertura urbana", d: "Atingimos diferentes bairros e perfis de público em uma única campanha." },
+    { t: "Custo-benefício", d: "Impacto comparável a outdoors fixos, com investimento mais inteligente." },
+    { t: "Mídia que se move", d: "Enquanto outdoors esperam o público passar, o ônibus leva a marca até ele." },
   ];
   return (
-    <section id="beneficios" className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
-      <div className="mx-auto max-w-2xl text-center">
-        <SectionEyebrow>Por que anunciar com a gente</SectionEyebrow>
-        <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
-          Resultado que circula pela cidade inteira.
+    <section id="beneficios" className="mx-auto max-w-6xl px-6 py-28 lg:py-36">
+      <div className="max-w-2xl">
+        <Eyebrow>03 — Benefícios</Eyebrow>
+        <h2 className="mt-8 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">
+          Resultado que <em className="italic text-primary">circula</em> pela cidade.
         </h2>
       </div>
-      <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {items.map(({ icon: Icon, title, text }) => (
-          <div
-            key={title}
-            className="group rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
-          >
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
-              <Icon className="h-6 w-6" />
+      <div className="mt-16 grid gap-x-12 gap-y-10 sm:grid-cols-2">
+        {items.map((b, i) => (
+          <div key={b.t} className="border-t border-border pt-6">
+            <div className="flex items-baseline gap-4">
+              <span className="font-serif text-sm text-primary">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="font-serif text-xl font-normal text-foreground">{b.t}</h3>
             </div>
-            <h3 className="mt-5 text-lg font-bold text-foreground">{title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+            <p className="mt-3 pl-10 text-sm leading-relaxed text-muted-foreground">
+              {b.d}
+            </p>
           </div>
         ))}
       </div>
@@ -447,29 +340,112 @@ function Benefits() {
 
 function Process() {
   const steps = [
-    { n: "01", t: "Fale com a gente", d: "Entre em contato pelo WhatsApp e conte sobre o seu objetivo de campanha." },
-    { n: "02", t: "Receba a proposta", d: "Montamos um plano com formato, quantidade de ônibus e período ideal." },
-    { n: "03", t: "Aprovação da arte", d: "Nossa equipe orienta e finaliza a arte pronta para impressão." },
-    { n: "04", t: "Sua marca na rua", d: "Produzimos, instalamos e a campanha começa a rodar Fortaleza." },
+    { t: "Conversa", d: "Entre em contato pelo WhatsApp e nos conte sobre o seu objetivo." },
+    { t: "Proposta", d: "Montamos um plano com formato, quantidade de ônibus e período ideal." },
+    { t: "Aprovação", d: "Nossa equipe orienta e finaliza a arte pronta para impressão." },
+    { t: "Na rua", d: "Produzimos, instalamos e a campanha começa a rodar Fortaleza." },
   ];
   return (
-    <section className="bg-muted/50 py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <SectionEyebrow>Como funciona</SectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
-            Da ideia até a rua em 4 passos simples.
+    <section className="border-y border-border bg-muted/40">
+      <div className="mx-auto max-w-6xl px-6 py-28 lg:py-36">
+        <div className="max-w-2xl">
+          <Eyebrow>04 — Processo</Eyebrow>
+          <h2 className="mt-8 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">
+            Da ideia à rua, em quatro <em className="italic text-primary">tempos</em>.
           </h2>
         </div>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((s) => (
-            <div
-              key={s.n}
-              className="relative rounded-2xl border border-border bg-card p-6 shadow-sm transition hover:border-primary/40 hover:shadow-lg"
-            >
-              <div className="text-5xl font-black text-primary">{s.n}</div>
-              <h3 className="mt-4 text-lg font-bold text-foreground">{s.t}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
+        <ol className="mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((s, i) => (
+            <li key={s.t} className="border-t border-border pt-6">
+              <div className="font-serif text-3xl font-light text-primary">
+                {String(i + 1).padStart(2, "0")}
+              </div>
+              <h3 className="mt-6 font-serif text-xl font-normal text-foreground">
+                {s.t}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {s.d}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Testimonials ---------------- */
+
+function Testimonials() {
+  const testimonials = [
+    {
+      name: "Rafael Lima",
+      role: "Diretor de Marketing",
+      quote:
+        "A campanha em Backbus virou conversa nas lojas. Em duas semanas vimos aumento real de fluxo nas unidades atendidas.",
+    },
+    {
+      name: "Carla Mendes",
+      role: "Fundadora · Studio Bem Estar",
+      quote:
+        "Equipe atenciosa do briefing à instalação. O relatório fotográfico foi um diferencial — fechamos a renovação imediata.",
+    },
+    {
+      name: "Diego Araújo",
+      role: "Gerente Comercial",
+      quote:
+        "Trocamos parte da verba de outdoor por Busdoor e o alcance praticamente dobrou. Hoje é item fixo no nosso plano de mídia.",
+    },
+  ];
+
+  const cases = [
+    { brand: "Varejo", metric: "+38%", label: "fluxo em loja após 30 dias" },
+    { brand: "Imobiliário", metric: "2,1M", label: "impactos estimados ao mês" },
+    { brand: "Educação", metric: "+62%", label: "buscas pela marca no período" },
+  ];
+
+  return (
+    <section id="depoimentos" className="mx-auto max-w-6xl px-6 py-28 lg:py-36">
+      <div className="max-w-2xl">
+        <Eyebrow>05 — Clientes</Eyebrow>
+        <h2 className="mt-8 font-serif text-4xl font-light leading-[1.1] tracking-tight sm:text-5xl">
+          Marcas que <em className="italic text-primary">rodam</em> Fortaleza com a gente.
+        </h2>
+      </div>
+
+      <div className="mt-16 grid gap-x-12 gap-y-14 md:grid-cols-3">
+        {testimonials.map((t) => (
+          <figure key={t.name} className="border-t border-border pt-8">
+            <blockquote className="font-serif text-xl font-light italic leading-snug text-foreground">
+              “{t.quote}”
+            </blockquote>
+            <figcaption className="mt-8">
+              <div className="text-sm font-medium text-foreground">{t.name}</div>
+              <div className="mt-1 text-xs text-muted-foreground">{t.role}</div>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <div className="mt-24 border-t border-border pt-10">
+        <div className="mb-10 flex items-baseline justify-between gap-4">
+          <h3 className="font-serif text-2xl font-light text-foreground">
+            Cases em números
+          </h3>
+          <span className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+            Médias de campanhas recentes
+          </span>
+        </div>
+        <div className="grid divide-y divide-border border-y border-border md:grid-cols-3 md:divide-x md:divide-y-0">
+          {cases.map((c) => (
+            <div key={c.brand} className="px-2 py-8 md:px-8">
+              <div className="text-[11px] uppercase tracking-[0.3em] text-primary">
+                {c.brand}
+              </div>
+              <div className="mt-5 font-serif text-5xl font-light text-foreground sm:text-6xl">
+                {c.metric}
+              </div>
+              <div className="mt-3 text-sm text-muted-foreground">{c.label}</div>
             </div>
           ))}
         </div>
@@ -478,158 +454,52 @@ function Process() {
   );
 }
 
-/* ---------------- Testimonials & Cases ---------------- */
-
-function Testimonials() {
-  const testimonials = [
-    {
-      name: "Rafael Lima",
-      role: "Diretor de Marketing",
-      company: "Rede Supermercados Pague Menos",
-      quote:
-        "A campanha em Backbus virou conversa nas lojas. Em duas semanas vimos aumento real de fluxo nas unidades das avenidas atendidas.",
-      rating: 5,
-    },
-    {
-      name: "Carla Mendes",
-      role: "Fundadora",
-      company: "Studio Bem Estar",
-      quote:
-        "Equipe atenciosa do briefing à instalação. O relatório fotográfico foi um diferencial — mostrei aos sócios e fechamos renovação imediata.",
-      rating: 5,
-    },
-    {
-      name: "Diego Araújo",
-      role: "Gerente Comercial",
-      company: "Construtora Horizonte",
-      quote:
-        "Trocamos parte da verba de outdoor por Busdoor e o alcance praticamente dobrou. Hoje é item fixo no nosso plano de mídia.",
-      rating: 5,
-    },
-  ];
-
-  const cases = [
-    { brand: "Varejo", metric: "+38%", label: "fluxo em loja após 30 dias" },
-    { brand: "Imobiliário", metric: "2,1M", label: "impactos estimados/mês" },
-    { brand: "Educação", metric: "+62%", label: "buscas pela marca no período" },
-  ];
-
-  return (
-    <section id="depoimentos" className="bg-secondary text-secondary-foreground">
-      <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <SectionEyebrow tone="dark">Depoimentos & Cases</SectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
-            Marcas que já rodam Fortaleza com a gente.
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-base text-secondary-foreground/70">
-            Resultados reais de quem confiou na BusMidia para colocar a
-            mensagem na rua.
-          </p>
-        </div>
-
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {testimonials.map((t) => (
-            <figure
-              key={t.name}
-              className="group relative flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:-translate-y-1 hover:border-primary/40"
-            >
-              <Quote
-                className="absolute right-6 top-6 h-10 w-10 text-primary/20"
-                aria-hidden="true"
-              />
-              <div className="flex gap-1 text-primary">
-                {Array.from({ length: t.rating }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <blockquote className="mt-5 flex-1 text-base leading-relaxed text-secondary-foreground/90">
-                “{t.quote}”
-              </blockquote>
-              <figcaption className="mt-6 border-t border-white/10 pt-5">
-                <div className="text-sm font-bold text-secondary-foreground">
-                  {t.name}
-                </div>
-                <div className="text-xs text-secondary-foreground/60">
-                  {t.role} · {t.company}
-                </div>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-
-        <div className="mt-16">
-          <div className="mb-6 flex items-end justify-between gap-4">
-            <h3 className="text-xl font-bold text-secondary-foreground sm:text-2xl">
-              Cases em números
-            </h3>
-            <span className="hidden text-xs uppercase tracking-[0.25em] text-secondary-foreground/50 sm:inline">
-              Dados médios de campanhas recentes
-            </span>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-3">
-            {cases.map((c) => (
-              <div
-                key={c.brand}
-                className="rounded-2xl border border-primary/20 bg-gradient-to-br from-white/5 to-transparent p-7"
-              >
-                <div className="text-xs font-bold uppercase tracking-[0.25em] text-primary">
-                  {c.brand}
-                </div>
-                <div className="mt-3 text-4xl font-black text-secondary-foreground sm:text-5xl">
-                  {c.metric}
-                </div>
-                <div className="mt-2 text-sm text-secondary-foreground/70">
-                  {c.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ---------------- Final CTA ---------------- */
-
 
 function FinalCTA() {
   return (
-    <section id="contato" className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
-      <div
-        className="relative overflow-hidden rounded-3xl border border-primary/20 px-8 py-16 text-center text-secondary-foreground sm:px-16"
-        style={{ background: "var(--gradient-hero)" }}
-      >
-        <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/30 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-24 -left-10 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
-        <div className="relative mx-auto max-w-2xl">
-          <SectionEyebrow tone="dark">Vamos rodar juntos</SectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
-            Pronto para colocar sua marca em movimento?
-          </h2>
-          <p className="mt-5 text-base text-secondary-foreground/75 sm:text-lg">
-            Solicite agora seu orçamento de Busdoor ou Backbus e descubra
-            como é simples anunciar com a BusMidia.
-          </p>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:brightness-110"
-          >
-            <WhatsAppIcon className="h-5 w-5" />
-            Falar no WhatsApp
-            <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-          </a>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-secondary-foreground/80">
-            <span className="inline-flex items-center gap-2">
-              <Phone className="h-4 w-4 text-primary" /> (85) 98732-6044
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-primary" />
-              Av. da Liberdade, 361 — Autran Nunes, Fortaleza/CE
-            </span>
+    <section id="contato" className="bg-secondary text-secondary-foreground">
+      <div className="mx-auto max-w-6xl px-6 py-32 lg:py-40">
+        <div className="grid gap-16 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-8">
+            <Eyebrow tone="dark">Contato</Eyebrow>
+            <h2 className="mt-8 font-serif text-5xl font-light leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+              Vamos colocar sua marca em{" "}
+              <em className="italic text-primary">movimento</em>?
+            </h2>
+            <p className="mt-8 max-w-xl text-base text-secondary-foreground/70">
+              Solicite agora seu orçamento de Busdoor ou Backbus e descubra
+              como é simples anunciar com a BusMidia.
+            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-12 inline-flex items-center gap-3 border-b border-secondary-foreground pb-2 text-sm font-medium tracking-wide text-secondary-foreground transition hover:border-primary hover:text-primary"
+            >
+              Falar no WhatsApp
+              <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </a>
+          </div>
+          <div className="space-y-6 text-sm text-secondary-foreground/80 lg:col-span-4">
+            <div>
+              <div className="text-[11px] uppercase tracking-[0.25em] text-primary">
+                Telefone
+              </div>
+              <div className="mt-2 flex items-center gap-2">
+                <Phone className="h-3.5 w-3.5" />
+                (85) 98732-6044
+              </div>
+            </div>
+            <div>
+              <div className="text-[11px] uppercase tracking-[0.25em] text-primary">
+                Endereço
+              </div>
+              <div className="mt-2 flex items-start gap-2">
+                <MapPin className="mt-0.5 h-3.5 w-3.5 flex-shrink-0" />
+                Av. da Liberdade, 361 — Autran Nunes, Fortaleza/CE
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -641,66 +511,29 @@ function FinalCTA() {
 
 function Footer() {
   return (
-    <footer className="border-t border-border bg-secondary text-secondary-foreground">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
-        <div>
-          <img
-            src={LOGO_URL}
-            alt="BusMidia"
-            className="h-12 w-auto"
-          />
-          <p className="mt-5 max-w-xs text-sm leading-relaxed text-secondary-foreground/70">
-            Mídia em ônibus que coloca sua marca em movimento por toda Fortaleza.
-          </p>
+    <footer className="border-t border-white/10 bg-secondary text-secondary-foreground">
+      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-12 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-6">
+          <img src={LOGO_URL} alt="BusMidia" className="h-9 w-auto" />
+          <span className="hidden text-xs text-secondary-foreground/50 sm:inline">
+            © {new Date().getFullYear()} BusMidia Publicidade Móvel
+          </span>
         </div>
-        <div>
-          <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
-            Contato
-          </h4>
-          <ul className="mt-5 space-y-3 text-sm text-secondary-foreground/80">
-            <li className="flex items-start gap-2">
-              <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-              Av. da Liberdade, 361 — Bairro Autran Nunes, Fortaleza/CE
-            </li>
-            <li className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-primary" />
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition hover:text-primary"
-              >
-                (85) 98732-6044
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
-            Redes sociais
-          </h4>
-          <div className="mt-5 flex gap-3">
-            <SocialLink
-              href="https://www.youtube.com/@busmidiapublicidademovel6664"
-              label="YouTube"
-            >
-              <Youtube className="h-5 w-5" />
-            </SocialLink>
-            <SocialLink
-              href="https://www.instagram.com/busmidiaceara/"
-              label="Instagram"
-            >
-              <Instagram className="h-5 w-5" />
-            </SocialLink>
-            <SocialLink href={WHATSAPP_URL} label="WhatsApp">
-              <WhatsAppIcon className="h-5 w-5" />
-            </SocialLink>
-          </div>
+        <div className="flex items-center gap-5">
+          <SocialLink href="https://www.youtube.com/@busmidiapublicidademovel6664" label="YouTube">
+            <Youtube className="h-4 w-4" />
+          </SocialLink>
+          <SocialLink href="https://www.instagram.com/busmidiaceara/" label="Instagram">
+            <Instagram className="h-4 w-4" />
+          </SocialLink>
+          <SocialLink href={WHATSAPP_URL} label="WhatsApp">
+            <WhatsAppIcon className="h-4 w-4" />
+          </SocialLink>
         </div>
       </div>
-      <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-4 py-5 text-center text-xs text-secondary-foreground/60 sm:px-6">
-          © {new Date().getFullYear()} BusMidia Publicidade Móvel. Todos os direitos reservados.
+      <div className="border-t border-white/10 sm:hidden">
+        <div className="px-6 py-5 text-center text-xs text-secondary-foreground/50">
+          © {new Date().getFullYear()} BusMidia Publicidade Móvel
         </div>
       </div>
     </footer>
@@ -722,7 +555,7 @@ function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-secondary-foreground transition hover:border-primary hover:bg-primary hover:text-primary-foreground"
+      className="text-secondary-foreground/60 transition hover:text-primary"
     >
       {children}
     </a>
@@ -731,7 +564,7 @@ function SocialLink({
 
 /* ---------------- Helpers ---------------- */
 
-function SectionEyebrow({
+function Eyebrow({
   children,
   tone = "light",
 }: {
@@ -739,13 +572,14 @@ function SectionEyebrow({
   tone?: "light" | "dark";
 }) {
   return (
-    <span
-      className={`text-xs font-bold uppercase tracking-[0.25em] ${
-        tone === "dark" ? "text-primary" : "text-primary"
-      }`}
-    >
-      {children}
-    </span>
+    <div className="flex items-center gap-4">
+      <span
+        className={`h-px w-8 ${tone === "dark" ? "bg-primary/60" : "bg-foreground/30"}`}
+      />
+      <span className="text-[11px] font-medium uppercase tracking-[0.3em] text-primary">
+        {children}
+      </span>
+    </div>
   );
 }
 
@@ -758,13 +592,9 @@ function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
-      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_15px_35px_-10px_rgba(37,211,102,0.6)] ring-4 ring-[#25D366]/20 transition hover:scale-110"
+      className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition hover:scale-105"
     >
-      <WhatsAppIcon className="h-7 w-7" />
-      <span className="absolute -top-1 -right-1 flex h-3 w-3">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#25D366] opacity-75" />
-        <span className="relative inline-flex h-3 w-3 rounded-full bg-[#25D366]" />
-      </span>
+      <WhatsAppIcon className="h-5 w-5" />
     </a>
   );
 }
