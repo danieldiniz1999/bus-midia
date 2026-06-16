@@ -71,6 +71,7 @@ function LandingPage() {
         <Benefits />
         <Process />
         <Testimonials />
+        <FAQ />
         <FinalCTA />
       </main>
       <Footer />
@@ -97,6 +98,7 @@ function Header() {
           <a href="#formatos" className="transition hover:text-foreground">Formatos</a>
           <a href="#beneficios" className="transition hover:text-foreground">Benefícios</a>
           <a href="#depoimentos" className="transition hover:text-foreground">Depoimentos</a>
+          <a href="#faq" className="transition hover:text-foreground">FAQ</a>
           <a href="#contato" className="transition hover:text-foreground">Contato</a>
         </nav>
         <a
@@ -591,7 +593,80 @@ function Testimonials() {
   );
 }
 
+/* ---------------- FAQ ---------------- */
+
+function FAQ() {
+  const faqs = [
+    {
+      q: "Quanto custa anunciar em ônibus com a BusMidia?",
+      a: "O investimento varia conforme o formato (Busdoor ou Backbus), quantidade de veículos e período da campanha. Solicite um orçamento personalizado pelo WhatsApp — respondemos em poucos minutos com a melhor combinação para o seu objetivo.",
+    },
+    {
+      q: "Qual o prazo mínimo de veiculação?",
+      a: "Trabalhamos com campanhas a partir de 15 dias. Para resultados consistentes de marca e recall, recomendamos períodos de 30 a 90 dias.",
+    },
+    {
+      q: "Vocês cuidam da criação da arte?",
+      a: "Sim. Nossa equipe orienta sobre as melhores práticas e pode desenvolver a arte do zero, garantindo legibilidade, impacto visual e fidelidade à identidade da sua marca.",
+    },
+    {
+      q: "É possível escolher as rotas dos ônibus?",
+      a: "Sim. Direcionamos a campanha para as regiões e linhas de Fortaleza mais estratégicas para o seu público — bairros nobres, corredores comerciais, zona universitária, entre outros.",
+    },
+    {
+      q: "Como acompanho os resultados da campanha?",
+      a: "Você recebe relatórios com fotos dos veículos rodando, comprovação de exposição e estimativas de alcance e impressões diárias por rota.",
+    },
+    {
+      q: "Atendem em outras cidades além de Fortaleza?",
+      a: "Nossa operação principal é em Fortaleza e Região Metropolitana. Para outras praças, entre em contato — avaliamos parcerias caso a caso.",
+    },
+  ];
+
+  return (
+    <section id="faq" className="bg-secondary py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6">
+        <div className="mb-14 text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            Perguntas frequentes
+          </span>
+          <h2 className="mt-3 text-4xl font-bold text-secondary-foreground sm:text-5xl">
+            Tudo o que você precisa saber
+          </h2>
+          <p className="mt-4 text-base text-secondary-foreground/70">
+            Não encontrou sua dúvida? Fale com a gente no WhatsApp.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          {faqs.map((item, i) => (
+            <details
+              key={i}
+              className="group rounded-2xl border border-primary/15 bg-background/5 px-6 py-5 backdrop-blur transition hover:border-primary/40 [&_summary::-webkit-details-marker]:hidden"
+            >
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left text-base font-semibold text-secondary-foreground sm:text-lg">
+                <span>{item.q}</span>
+                <span
+                  aria-hidden="true"
+                  className="mt-1 grid h-7 w-7 shrink-0 place-items-center rounded-full border border-primary/40 text-primary transition group-open:rotate-45"
+                >
+                  +
+                </span>
+              </summary>
+              <p className="mt-4 text-sm leading-relaxed text-secondary-foreground/75 sm:text-base">
+                {item.a}
+              </p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ---------------- Final CTA ---------------- */
+
+
 
 
 function FinalCTA() {
