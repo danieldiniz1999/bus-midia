@@ -96,6 +96,7 @@ function Header() {
           <a href="#quem-somos" className="transition hover:text-foreground">Quem somos</a>
           <a href="#formatos" className="transition hover:text-foreground">Formatos</a>
           <a href="#beneficios" className="transition hover:text-foreground">Benefícios</a>
+          <a href="#depoimentos" className="transition hover:text-foreground">Depoimentos</a>
           <a href="#contato" className="transition hover:text-foreground">Contato</a>
         </nav>
         <a
