@@ -70,6 +70,7 @@ function LandingPage() {
         <Formats />
         <Benefits />
         <Process />
+        <Testimonials />
         <FinalCTA />
       </main>
       <Footer />
