@@ -12,6 +12,8 @@ import {
   Route as RouteIcon,
   Sparkles,
   ArrowRight,
+  Star,
+  Quote,
 } from "lucide-react";
 import heroBus from "../assets/hero-bus.jpg";
 import backbusImg from "../assets/backbus.jpg";
