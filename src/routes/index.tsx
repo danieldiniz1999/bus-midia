@@ -30,7 +30,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 import heroBus from "../assets/hero-bus.jpg";
 import backbusImg from "../assets/backbus.jpg";
 import busdoorImg from "../assets/busdoor.jpg";
-import logoAsset from "../assets/busmidia-logo.png.asset.json";
+import logoAsset from "../assets/busmidia-logo.webp.asset.json";
 
 const LOGO_URL = logoAsset.url;
 
