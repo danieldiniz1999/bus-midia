@@ -458,17 +458,11 @@ function Footer() {
     <footer className="border-t border-border bg-secondary text-secondary-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div>
-          <div className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[image:var(--gradient-primary)] text-primary-foreground">
-              <Bus className="h-5 w-5" />
-            </div>
-            <div className="leading-tight">
-              <div className="text-sm font-bold">BusMidia</div>
-              <div className="text-[10px] uppercase tracking-widest text-white/60">
-                Publicidade Móvel
-              </div>
-            </div>
-          </div>
+          <img
+            src={LOGO_URL}
+            alt="BusMidia"
+            className="h-12 w-auto brightness-0 invert"
+          />
           <p className="mt-4 max-w-xs text-sm text-white/70">
             Mídia em ônibus que coloca sua marca em movimento por toda Fortaleza.
           </p>
