@@ -27,6 +27,8 @@ import clientSelfit from "../assets/clients/selfit.svg.asset.json";
 import clientTiradentes from "../assets/clients/tiradentes.png.asset.json";
 import clientUnifametro from "../assets/clients/unifametro.png.asset.json";
 import clientUnifanor from "../assets/clients/unifanor.png.asset.json";
+import clientBetNacional from "../assets/betnacional.png.asset.json";
+import clientPomar from "../assets/pomar.png.asset.json";
 
 const CLIENTS = [
   { name: "Selfit Academias", url: clientSelfit.url },
@@ -590,6 +592,7 @@ function Testimonials() {
       name: "Equipe de Mídia",
       role: "Apostas Esportivas",
       company: "Bet Nacional",
+      logo: clientBetNacional.url,
       quote:
         "Profissionalismo do briefing à instalação. Frota entregue no prazo e criativo respeitando 100% do manual de marca.",
       rating: 5,
@@ -606,11 +609,12 @@ function Testimonials() {
       name: "Marketing",
       role: "Varejo",
       company: "Pomar",
+      logo: clientPomar.url,
       quote:
         "Atendimento ágil e resultado visível. Renovamos a campanha porque o impacto nas ruas é real.",
       rating: 5,
     },
-  ];
+  ] as Array<{ name: string; role: string; company: string; quote: string; rating: number; logo?: string }>;
 
   const cases = [
     { brand: "Varejo", metric: "+38%", label: "fluxo em loja após 30 dias" },
@@ -650,12 +654,23 @@ function Testimonials() {
               <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-secondary-foreground/90">
                 “{t.quote}”
               </blockquote>
-              <figcaption className="mt-4 border-t border-white/10 pt-3">
-                <div className="text-sm font-bold text-secondary-foreground">
-                  {t.company}
-                </div>
-                <div className="text-xs text-secondary-foreground/60">
-                  {t.name} · {t.role}
+              <figcaption className="mt-4 flex items-center gap-3 border-t border-white/10 pt-3">
+                {t.logo && (
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-md bg-white p-1">
+                    <img
+                      src={t.logo}
+                      alt={`Logo ${t.company}`}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                )}
+                <div>
+                  <div className="text-sm font-bold text-secondary-foreground">
+                    {t.company}
+                  </div>
+                  <div className="text-xs text-secondary-foreground/60">
+                    {t.name} · {t.role}
+                  </div>
                 </div>
               </figcaption>
             </figure>
