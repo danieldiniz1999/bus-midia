@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   MapPin,
   Phone,
@@ -14,6 +15,8 @@ import {
   ArrowRight,
   Star,
   Quote,
+  Menu,
+  X,
 } from "lucide-react";
 import heroBus from "../assets/hero-bus.jpg";
 import backbusImg from "../assets/backbus.jpg";
@@ -107,34 +110,70 @@ function LandingPage() {
 /* ---------------- Header ---------------- */
 
 function Header() {
+  const [open, setOpen] = useState(false);
+  const navItems = [
+    { href: "#quem-somos", label: "Quem somos" },
+    { href: "#formatos", label: "Formatos" },
+    { href: "#beneficios", label: "Benefícios" },
+    { href: "#depoimentos", label: "Depoimentos" },
+    { href: "#faq", label: "FAQ" },
+    { href: "#contato", label: "Contato" },
+  ];
   return (
     <header className="relative z-40 border-b border-white/10 bg-[#0c1a2e]">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <a href="#top" className="flex items-center" aria-label="BusMidia - início">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
+        <a href="#top" className="flex shrink-0 items-center" aria-label="BusMidia - início">
           <img
             src={LOGO_URL}
             alt="BusMidia - Publicidade em Ônibus"
             className="h-10 w-auto sm:h-12"
           />
         </a>
-        <nav className="hidden items-center gap-8 text-sm font-medium text-white/70 md:flex">
-          <a href="#quem-somos" className="transition hover:text-white">Quem somos</a>
-          <a href="#formatos" className="transition hover:text-white">Formatos</a>
-          <a href="#beneficios" className="transition hover:text-white">Benefícios</a>
-          <a href="#depoimentos" className="transition hover:text-white">Depoimentos</a>
-          <a href="#faq" className="transition hover:text-white">FAQ</a>
-          <a href="#contato" className="transition hover:text-white">Contato</a>
+        <nav className="hidden items-center gap-6 text-sm font-medium text-white/70 lg:flex xl:gap-8">
+          {navItems.map((n) => (
+            <a key={n.href} href={n.href} className="transition hover:text-white">
+              {n.label}
+            </a>
+          ))}
         </nav>
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden items-center gap-2 rounded-full bg-[#f5c518] px-5 py-2.5 text-sm font-semibold text-[#0c1a2e] transition hover:bg-[#ffd84d] sm:inline-flex"
-        >
-          <WhatsAppIcon className="h-4 w-4" />
-          Orçamento
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#f5c518] px-3 py-2 text-xs font-semibold text-[#0c1a2e] transition hover:bg-[#ffd84d] sm:px-5 sm:py-2.5 sm:text-sm"
+          >
+            <WhatsAppIcon className="h-4 w-4" />
+            <span className="hidden xs:inline sm:inline">Orçamento</span>
+          </a>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white/80 transition hover:bg-white/10 hover:text-white lg:hidden"
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={open}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
+      {open && (
+        <nav className="border-t border-white/10 bg-[#0c1a2e] lg:hidden">
+          <ul className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6">
+            {navItems.map((n) => (
+              <li key={n.href}>
+                <a
+                  href={n.href}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-lg px-3 py-3 text-base font-medium text-white/85 transition hover:bg-white/10 hover:text-white"
+                >
+                  {n.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }
