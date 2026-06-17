@@ -786,7 +786,7 @@ function FAQ() {
   ];
 
   return (
-    <section id="faq" className="bg-secondary py-16">
+    <section id="faq" className="bg-muted/50 py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="mb-14 text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
