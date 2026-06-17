@@ -85,6 +85,7 @@ function LandingPage() {
         <Formats />
         <Benefits />
         <Process />
+        <Clients />
         <Testimonials />
         <FAQ />
         <FinalCTA />
