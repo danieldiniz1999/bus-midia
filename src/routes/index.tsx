@@ -316,7 +316,7 @@ function Stats() {
 
 function About() {
   return (
-    <section id="quem-somos" className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
+    <section id="quem-somos" className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
       <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
         <div>
           <SectionEyebrow>Quem somos</SectionEyebrow>
@@ -370,7 +370,7 @@ function About() {
 function Formats() {
   return (
     <section id="formatos" className="bg-secondary text-secondary-foreground">
-      <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow tone="dark">Nossos formatos</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
@@ -483,7 +483,7 @@ function Benefits() {
     },
   ];
   return (
-    <section id="beneficios" className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
+    <section id="beneficios" className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
       <div className="mx-auto max-w-2xl text-center">
         <SectionEyebrow>Por que anunciar com a gente</SectionEyebrow>
         <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
@@ -518,7 +518,7 @@ function Process() {
     { n: "04", t: "Sua marca na rua", d: "Produzimos, instalamos e a campanha começa a rodar Fortaleza." },
   ];
   return (
-    <section className="bg-muted/50 py-24">
+    <section className="bg-muted/50 py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>Como funciona</SectionEyebrow>
@@ -666,7 +666,7 @@ function Testimonials() {
 
   return (
     <section id="depoimentos" className="bg-secondary text-secondary-foreground">
-      <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow tone="dark">Depoimentos & Cases</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
@@ -783,7 +783,7 @@ function FAQ() {
   ];
 
   return (
-    <section id="faq" className="bg-secondary py-24">
+    <section id="faq" className="bg-secondary py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="mb-14 text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
@@ -830,7 +830,7 @@ function FAQ() {
 
 function FinalCTA() {
   return (
-    <section id="contato" className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
+    <section id="contato" className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
       <div
         className="relative overflow-hidden rounded-3xl border border-primary/20 px-8 py-16 text-center text-secondary-foreground sm:px-16"
         style={{ background: "var(--gradient-hero)" }}
