@@ -634,7 +634,7 @@ function Testimonials() {
       name: "Trade Marketing",
       role: "Indústria de Alimentos",
       company: "Ideal Alimentos",
-      logo: clientPomar.url,
+      logo: clientIdealAlimentos.url,
       quote:
         "Excelente custo por impacto. Conseguimos ativar a marca em larga escala sem estourar o orçamento de mídia.",
       rating: 5,
