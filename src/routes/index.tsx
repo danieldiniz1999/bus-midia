@@ -122,13 +122,24 @@ function Header() {
   return (
     <header className="relative z-40 border-b border-white/10 bg-[#0c1a2e]">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
-        <a href="#top" className="flex shrink-0 items-center" aria-label="BusMidia - início">
-          <img
-            src={LOGO_URL}
-            alt="BusMidia - Publicidade em Ônibus"
-            className="h-10 w-auto sm:h-12"
-          />
-        </a>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white/80 transition hover:bg-white/10 hover:text-white lg:hidden"
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={open}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+          <a href="#top" className="flex shrink-0 items-center" aria-label="BusMidia - início">
+            <img
+              src={LOGO_URL}
+              alt="BusMidia - Publicidade em Ônibus"
+              className="h-10 w-auto sm:h-12"
+            />
+          </a>
+        </div>
         <nav className="hidden items-center gap-6 text-sm font-medium text-white/70 lg:flex xl:gap-8">
           {navItems.map((n) => (
             <a key={n.href} href={n.href} className="transition hover:text-white">
@@ -146,17 +157,9 @@ function Header() {
             <WhatsAppIcon className="h-4 w-4" />
             <span className="hidden xs:inline sm:inline">Orçamento</span>
           </a>
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white/80 transition hover:bg-white/10 hover:text-white lg:hidden"
-            aria-label={open ? "Fechar menu" : "Abrir menu"}
-            aria-expanded={open}
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
         </div>
       </div>
+
       {open && (
         <nav className="border-t border-white/10 bg-[#0c1a2e] lg:hidden">
           <ul className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6">
