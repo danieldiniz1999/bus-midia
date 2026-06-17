@@ -563,51 +563,51 @@ function Clients() {
 function Testimonials() {
   const testimonials = [
     {
-      name: "Rafael L.",
-      role: "Diretor de Marketing",
-      company: "Rede de Supermercados",
+      name: "Coordenação de Marketing",
+      role: "Educação",
+      company: "Colégio Dom Quintino",
       quote:
-        "A campanha em Backbus virou conversa nas lojas. Em duas semanas vimos aumento real de fluxo nas unidades das avenidas atendidas.",
+        "Na temporada de matrículas, o Busdoor foi decisivo para reforçar a marca nos bairros que queríamos atingir.",
       rating: 5,
     },
     {
-      name: "Carla M.",
-      role: "Fundadora",
-      company: "Studio de Bem-Estar",
+      name: "Marketing Institucional",
+      role: "Ensino Superior",
+      company: "Unifametro",
       quote:
-        "Equipe atenciosa do briefing à instalação. O relatório fotográfico foi um diferencial — mostrei aos sócios e fechamos renovação imediata.",
+        "Cobertura consistente nos corredores certos. O relatório fotográfico dá total transparência da veiculação.",
       rating: 5,
     },
     {
-      name: "Diego A.",
-      role: "Gerente Comercial",
-      company: "Construtora",
+      name: "Trade Marketing",
+      role: "Indústria de Alimentos",
+      company: "Ideal Alimentos",
       quote:
-        "Trocamos parte da verba de outdoor por Busdoor e o alcance praticamente dobrou. Hoje é item fixo no nosso plano de mídia.",
+        "Excelente custo por impacto. Conseguimos ativar a marca em larga escala sem estourar o orçamento de mídia.",
       rating: 5,
     },
     {
-      name: "Patrícia S.",
-      role: "Coordenadora de Marca",
-      company: "Rede de Farmácias",
+      name: "Equipe de Mídia",
+      role: "Apostas Esportivas",
+      company: "Bet Nacional",
       quote:
-        "Cobertura impecável nos corredores de maior movimento. Conseguimos medir o pico de buscas pela marca no mesmo mês da veiculação.",
+        "Profissionalismo do briefing à instalação. Frota entregue no prazo e criativo respeitando 100% do manual de marca.",
       rating: 5,
     },
     {
-      name: "Marcos V.",
-      role: "Sócio-Diretor",
-      company: "Concessionária Automotiva",
+      name: "Marketing",
+      role: "Telecom",
+      company: "GC Net",
       quote:
-        "Profissionalismo do início ao fim. A criação respeitou nosso manual de marca e a entrega foi pontual em todas as frotas.",
+        "Parceria que entrega. O Backbus ampliou nosso awareness nos bairros atendidos e gerou retorno em vendas.",
       rating: 5,
     },
     {
-      name: "Juliana R.",
-      role: "Head de Growth",
-      company: "Faculdade Particular",
+      name: "Marketing",
+      role: "Varejo",
+      company: "Pomar",
       quote:
-        "Na temporada de matrículas, o Busdoor foi o canal que mais gerou awareness por real investido. Renovamos para o próximo ciclo.",
+        "Atendimento ágil e resultado visível. Renovamos a campanha porque o impacto nas ruas é real.",
       rating: 5,
     },
   ];
@@ -632,30 +632,30 @@ function Testimonials() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t) => (
             <figure
-              key={t.name}
-              className="group relative flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:-translate-y-1 hover:border-primary/40"
+              key={t.company}
+              className="group relative flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur transition hover:-translate-y-1 hover:border-primary/40"
             >
               <Quote
-                className="absolute right-6 top-6 h-10 w-10 text-primary/20"
+                className="absolute right-4 top-4 h-6 w-6 text-primary/20"
                 aria-hidden="true"
               />
               <div className="flex gap-1 text-primary">
                 {Array.from({ length: t.rating }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
+                  <Star key={i} className="h-3 w-3 fill-current" />
                 ))}
               </div>
-              <blockquote className="mt-5 flex-1 text-base leading-relaxed text-secondary-foreground/90">
+              <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-secondary-foreground/90">
                 “{t.quote}”
               </blockquote>
-              <figcaption className="mt-6 border-t border-white/10 pt-5">
+              <figcaption className="mt-4 border-t border-white/10 pt-3">
                 <div className="text-sm font-bold text-secondary-foreground">
-                  {t.name}
+                  {t.company}
                 </div>
                 <div className="text-xs text-secondary-foreground/60">
-                  {t.role} · {t.company}
+                  {t.name} · {t.role}
                 </div>
               </figcaption>
             </figure>
