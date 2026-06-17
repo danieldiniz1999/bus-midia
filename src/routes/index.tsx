@@ -538,7 +538,7 @@ function Clients() {
                   src={c.url}
                   alt={c.name}
                   loading="lazy"
-                  className="h-14 w-auto max-w-full object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                  className="h-14 w-auto max-w-full object-contain transition duration-300 hover:scale-110"
                 />
               </div>
             ))}
