@@ -579,7 +579,7 @@ function Clients() {
               "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
           }}
         >
-          <div className="flex w-max animate-[scroll_30s_linear_infinite] items-center gap-14 sm:gap-20 group-hover:[animation-play-state:paused]">
+          <div className="flex w-max animate-[scroll_30s_linear_infinite] items-center gap-6 sm:gap-8 group-hover:[animation-play-state:paused]">
             {loop.map((c, i) => (
               <div
                 key={`${c.name}-${i}`}
