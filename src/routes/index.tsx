@@ -22,7 +22,7 @@ import logoAsset from "../assets/busmidia-logo.webp.asset.json";
 import clientBrayan from "../assets/clients/brayan.png.asset.json";
 import clientDomQuintino from "../assets/clients/domquintino.png.asset.json";
 import clientGcNet from "../assets/clients/gcnet.png.asset.json";
-import clientMirassol from "../assets/clients/mirassol.png.asset.json";
+
 import clientSelfit from "../assets/clients/selfit.svg.asset.json";
 import clientTiradentes from "../assets/clients/tiradentes.png.asset.json";
 import clientUnifametro from "../assets/clients/unifametro.png.asset.json";
