@@ -34,7 +34,7 @@ const CLIENTS = [
   { name: "UNIFAMETRO", url: clientUnifametro.url },
   { name: "Colégio Tiradentes", url: clientTiradentes.url },
   { name: "Colégio Dom Quintino", url: clientDomQuintino.url },
-  { name: "Colégio Mirassol", url: clientMirassol.url },
+  
   { name: "GC Net", url: clientGcNet.url },
   { name: "Brayan Burguer", url: clientBrayan.url },
 ];
