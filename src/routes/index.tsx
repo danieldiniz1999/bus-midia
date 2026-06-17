@@ -168,7 +168,7 @@ function Header() {
                 <a
                   href={n.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-lg px-3 py-3 text-base font-medium text-white/85 transition hover:bg-white/10 hover:text-[#0c1a2e]"
+                  className="block rounded-lg px-3 py-3 text-base font-medium text-[#0c1a2e]/85 transition hover:bg-[#0c1a2e]/10 hover:text-[#0c1a2e]"
                 >
                   {n.label}
                 </a>
