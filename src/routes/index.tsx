@@ -120,13 +120,13 @@ function Header() {
     { href: "#contato", label: "Contato" },
   ];
   return (
-    <header className="relative z-40 border-b border-white/10 bg-[#0c1a2e]">
+    <header className="relative z-40 border-b border-[#f5c518]/30 bg-white">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
         <div className="flex items-center gap-2">
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white/80 transition hover:bg-white/10 hover:text-white lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-[#0c1a2e] transition hover:bg-[#0c1a2e]/10 lg:hidden"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             aria-expanded={open}
           >
@@ -140,9 +140,9 @@ function Header() {
             />
           </a>
         </div>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-white/70 lg:flex xl:gap-8">
+        <nav className="hidden items-center gap-6 text-sm font-medium text-[#0c1a2e]/80 lg:flex xl:gap-8">
           {navItems.map((n) => (
-            <a key={n.href} href={n.href} className="transition hover:text-white">
+            <a key={n.href} href={n.href} className="transition hover:text-[#0c1a2e]">
               {n.label}
             </a>
           ))}
@@ -161,14 +161,14 @@ function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-white/10 bg-[#0c1a2e] lg:hidden">
+        <nav className="border-t border-[#f5c518]/30 bg-white lg:hidden">
           <ul className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6">
             {navItems.map((n) => (
               <li key={n.href}>
                 <a
                   href={n.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-lg px-3 py-3 text-base font-medium text-white/85 transition hover:bg-white/10 hover:text-white"
+                  className="block rounded-lg px-3 py-3 text-base font-medium text-white/85 transition hover:bg-white/10 hover:text-[#0c1a2e]"
                 >
                   {n.label}
                 </a>
