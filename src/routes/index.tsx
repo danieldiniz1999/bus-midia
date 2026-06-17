@@ -563,27 +563,51 @@ function Clients() {
 function Testimonials() {
   const testimonials = [
     {
-      name: "Rafael Lima",
+      name: "Rafael L.",
       role: "Diretor de Marketing",
-      company: "Rede Supermercados Pague Menos",
+      company: "Rede de Supermercados",
       quote:
         "A campanha em Backbus virou conversa nas lojas. Em duas semanas vimos aumento real de fluxo nas unidades das avenidas atendidas.",
       rating: 5,
     },
     {
-      name: "Carla Mendes",
+      name: "Carla M.",
       role: "Fundadora",
-      company: "Studio Bem Estar",
+      company: "Studio de Bem-Estar",
       quote:
         "Equipe atenciosa do briefing à instalação. O relatório fotográfico foi um diferencial — mostrei aos sócios e fechamos renovação imediata.",
       rating: 5,
     },
     {
-      name: "Diego Araújo",
+      name: "Diego A.",
       role: "Gerente Comercial",
-      company: "Construtora Horizonte",
+      company: "Construtora",
       quote:
         "Trocamos parte da verba de outdoor por Busdoor e o alcance praticamente dobrou. Hoje é item fixo no nosso plano de mídia.",
+      rating: 5,
+    },
+    {
+      name: "Patrícia S.",
+      role: "Coordenadora de Marca",
+      company: "Rede de Farmácias",
+      quote:
+        "Cobertura impecável nos corredores de maior movimento. Conseguimos medir o pico de buscas pela marca no mesmo mês da veiculação.",
+      rating: 5,
+    },
+    {
+      name: "Marcos V.",
+      role: "Sócio-Diretor",
+      company: "Concessionária Automotiva",
+      quote:
+        "Profissionalismo do início ao fim. A criação respeitou nosso manual de marca e a entrega foi pontual em todas as frotas.",
+      rating: 5,
+    },
+    {
+      name: "Juliana R.",
+      role: "Head de Growth",
+      company: "Faculdade Particular",
+      quote:
+        "Na temporada de matrículas, o Busdoor foi o canal que mais gerou awareness por real investido. Renovamos para o próximo ciclo.",
       rating: 5,
     },
   ];
