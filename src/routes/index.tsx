@@ -19,6 +19,21 @@ import heroBus from "../assets/hero-bus.jpg";
 import backbusImg from "../assets/backbus.jpg";
 import busdoorImg from "../assets/busdoor.jpg";
 import logoAsset from "../assets/busmidia-logo.webp.asset.json";
+import clientBrayan from "../assets/clients/brayan.png.asset.json";
+import clientDomQuintino from "../assets/clients/domquintino.png.asset.json";
+import clientEurocopia from "../assets/clients/eurocopia.png.asset.json";
+import clientGcNet from "../assets/clients/gcnet.webp.asset.json";
+import clientSelfit from "../assets/clients/selfit.svg.asset.json";
+import clientTiradentes from "../assets/clients/tiradentes.png.asset.json";
+
+const CLIENTS = [
+  { name: "Selfit Academias", url: clientSelfit.url },
+  { name: "Eurocopia", url: clientEurocopia.url },
+  { name: "Colégio Tiradentes", url: clientTiradentes.url },
+  { name: "Colégio Dom Quintino", url: clientDomQuintino.url },
+  { name: "GC Net", url: clientGcNet.url },
+  { name: "Brayan Burguer", url: clientBrayan.url },
+];
 
 const LOGO_URL = logoAsset.url;
 const WHATSAPP_NUMBER = "5585987326044";
@@ -70,6 +85,7 @@ function LandingPage() {
         <Formats />
         <Benefits />
         <Process />
+        <Clients />
         <Testimonials />
         <FAQ />
         <FinalCTA />
@@ -476,6 +492,64 @@ function Process() {
           ))}
         </div>
       </div>
+    </section>
+  );
+}
+
+/* ---------------- Clients ---------------- */
+
+function Clients() {
+  // Duplicamos para efeito de carrossel infinito
+  const loop = [...CLIENTS, ...CLIENTS];
+  return (
+    <section id="clientes" className="border-y border-border/60 bg-background py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="mb-12 text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            Quem confia na BusMidia
+          </span>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Marcas que já circularam com a gente
+          </h2>
+          <p className="mt-4 text-base text-muted-foreground">
+            Empresas locais e nacionais que escolheram nossa frota para crescer.
+          </p>
+        </div>
+
+        <div
+          className="group relative overflow-hidden"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          }}
+        >
+          <div className="flex w-max animate-[scroll_30s_linear_infinite] gap-16 group-hover:[animation-play-state:paused]">
+            {loop.map((c, i) => (
+              <div
+                key={`${c.name}-${i}`}
+                className="flex h-20 w-40 shrink-0 items-center justify-center"
+                title={c.name}
+              >
+                <img
+                  src={c.url}
+                  alt={c.name}
+                  loading="lazy"
+                  className="max-h-16 max-w-full object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
     </section>
   );
 }
