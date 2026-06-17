@@ -21,14 +21,12 @@ import busdoorImg from "../assets/busdoor.jpg";
 import logoAsset from "../assets/busmidia-logo.webp.asset.json";
 import clientBrayan from "../assets/clients/brayan.png.asset.json";
 import clientDomQuintino from "../assets/clients/domquintino.png.asset.json";
-import clientEurocopia from "../assets/clients/eurocopia.png.asset.json";
 import clientGcNet from "../assets/clients/gcnet.webp.asset.json";
 import clientSelfit from "../assets/clients/selfit.svg.asset.json";
 import clientTiradentes from "../assets/clients/tiradentes.png.asset.json";
 
 const CLIENTS = [
   { name: "Selfit Academias", url: clientSelfit.url },
-  { name: "Eurocopia", url: clientEurocopia.url },
   { name: "Colégio Tiradentes", url: clientTiradentes.url },
   { name: "Colégio Dom Quintino", url: clientDomQuintino.url },
   { name: "GC Net", url: clientGcNet.url },
