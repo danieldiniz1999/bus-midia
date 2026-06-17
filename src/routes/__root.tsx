@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Bus Midia" },
+      { name: "description", content: "Gentle AI Assistant helps manage and display client logos, testimonials, and project information." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Bus Midia" },
+      { property: "og:description", content: "Gentle AI Assistant helps manage and display client logos, testimonials, and project information." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Bus Midia" },
+      { name: "twitter:description", content: "Gentle AI Assistant helps manage and display client logos, testimonials, and project information." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/82d2546c-9dc5-4b6a-b1ef-361c5f41569c/id-preview-d9347e06--7365cbeb-a65f-4093-9f42-aee08ae1827e.lovable.app-1781664631827.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/82d2546c-9dc5-4b6a-b1ef-361c5f41569c/id-preview-d9347e06--7365cbeb-a65f-4093-9f42-aee08ae1827e.lovable.app-1781664631827.png" },
     ],
     links: [
       {
