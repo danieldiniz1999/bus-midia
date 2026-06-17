@@ -632,30 +632,30 @@ function Testimonials() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t) => (
             <figure
-              key={t.name}
-              className="group relative flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition hover:-translate-y-1 hover:border-primary/40"
+              key={t.company}
+              className="group relative flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur transition hover:-translate-y-1 hover:border-primary/40"
             >
               <Quote
-                className="absolute right-6 top-6 h-10 w-10 text-primary/20"
+                className="absolute right-4 top-4 h-6 w-6 text-primary/20"
                 aria-hidden="true"
               />
               <div className="flex gap-1 text-primary">
                 {Array.from({ length: t.rating }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
+                  <Star key={i} className="h-3 w-3 fill-current" />
                 ))}
               </div>
-              <blockquote className="mt-5 flex-1 text-base leading-relaxed text-secondary-foreground/90">
+              <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-secondary-foreground/90">
                 “{t.quote}”
               </blockquote>
-              <figcaption className="mt-6 border-t border-white/10 pt-5">
+              <figcaption className="mt-4 border-t border-white/10 pt-3">
                 <div className="text-sm font-bold text-secondary-foreground">
-                  {t.name}
+                  {t.company}
                 </div>
                 <div className="text-xs text-secondary-foreground/60">
-                  {t.role} · {t.company}
+                  {t.name} · {t.role}
                 </div>
               </figcaption>
             </figure>
