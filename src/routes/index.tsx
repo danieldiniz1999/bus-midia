@@ -29,6 +29,7 @@ import clientGcNet from "../assets/clients/gcnet.png.asset.json";
 import clientSelfit from "../assets/clients/selfit.svg.asset.json";
 import clientTiradentes from "../assets/clients/tiradentes.png.asset.json";
 import clientUnifametro from "../assets/clients/unifametro.png.asset.json";
+import clientIdealAlimentos from "../assets/clients/ideal-alimentos.png.asset.json";
 import clientUnifanor from "../assets/clients/unifanor.png.asset.json";
 import clientBetNacional from "../assets/betnacional.png.asset.json";
 import clientPomar from "../assets/pomar.png.asset.json";
@@ -39,6 +40,7 @@ const CLIENTS = [
   { name: "UNIFAMETRO", url: clientUnifametro.url },
   { name: "Colégio Tiradentes", url: clientTiradentes.url },
   { name: "Colégio Dom Quintino", url: clientDomQuintino.url },
+  { name: "Ideal Alimentos", url: clientIdealAlimentos.url },
   
   { name: "GC Net", url: clientGcNet.url },
   { name: "Brayan Burguer", url: clientBrayan.url },
@@ -632,7 +634,7 @@ function Testimonials() {
       name: "Trade Marketing",
       role: "Indústria de Alimentos",
       company: "Ideal Alimentos",
-      logo: clientPomar.url,
+      logo: clientIdealAlimentos.url,
       quote:
         "Excelente custo por impacto. Conseguimos ativar a marca em larga escala sem estourar o orçamento de mídia.",
       rating: 5,
