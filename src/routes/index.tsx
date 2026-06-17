@@ -601,6 +601,7 @@ function Testimonials() {
       name: "Marketing",
       role: "Telecom",
       company: "GC Net",
+      logo: clientGcNet.url,
       quote:
         "Parceria que entrega. O Backbus ampliou nosso awareness nos bairros atendidos e gerou retorno em vendas.",
       rating: 5,
