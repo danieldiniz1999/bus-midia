@@ -27,6 +27,8 @@ import clientSelfit from "../assets/clients/selfit.svg.asset.json";
 import clientTiradentes from "../assets/clients/tiradentes.png.asset.json";
 import clientUnifametro from "../assets/clients/unifametro.png.asset.json";
 import clientUnifanor from "../assets/clients/unifanor.png.asset.json";
+import clientBetNacional from "../assets/betnacional.png.asset.json";
+import clientPomar from "../assets/pomar.png.asset.json";
 
 const CLIENTS = [
   { name: "Selfit Academias", url: clientSelfit.url },
