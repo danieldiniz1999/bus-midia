@@ -654,12 +654,23 @@ function Testimonials() {
               <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-secondary-foreground/90">
                 “{t.quote}”
               </blockquote>
-              <figcaption className="mt-4 border-t border-white/10 pt-3">
-                <div className="text-sm font-bold text-secondary-foreground">
-                  {t.company}
-                </div>
-                <div className="text-xs text-secondary-foreground/60">
-                  {t.name} · {t.role}
+              <figcaption className="mt-4 flex items-center gap-3 border-t border-white/10 pt-3">
+                {t.logo && (
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-md bg-white p-1">
+                    <img
+                      src={t.logo}
+                      alt={`Logo ${t.company}`}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                )}
+                <div>
+                  <div className="text-sm font-bold text-secondary-foreground">
+                    {t.company}
+                  </div>
+                  <div className="text-xs text-secondary-foreground/60">
+                    {t.name} · {t.role}
+                  </div>
                 </div>
               </figcaption>
             </figure>
