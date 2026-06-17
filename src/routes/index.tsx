@@ -533,7 +533,7 @@ function Clients() {
             {loop.map((c, i) => (
               <div
                 key={`${c.name}-${i}`}
-                className="flex h-24 w-44 shrink-0 items-center justify-center px-2"
+                className="flex h-24 w-52 shrink-0 items-center justify-center px-6"
                 title={c.name}
               >
                 <img
