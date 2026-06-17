@@ -372,14 +372,14 @@ function About() {
 
 function Formats() {
   return (
-    <section id="formatos" className="bg-secondary text-secondary-foreground">
+    <section id="formatos" className="bg-background text-foreground">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <SectionEyebrow tone="dark">Nossos formatos</SectionEyebrow>
+          <SectionEyebrow>Nossos formatos</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
             Busdoor e Backbus — dois jeitos de colocar sua marca em movimento.
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-base text-secondary-foreground/70">
+          <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground">
             Escolha o formato ideal para o seu objetivo. Ou combine os dois
             e amplie o impacto da sua campanha.
           </p>
@@ -428,7 +428,7 @@ function FormatCard({
   bullets: string[];
 }) {
   return (
-    <article className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur transition hover:-translate-y-1 hover:border-primary/40">
+    <article className="group overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
       <div className="aspect-[16/10] overflow-hidden">
         <img
           src={image}
@@ -443,11 +443,11 @@ function FormatCard({
         <span className="inline-flex rounded-full bg-primary/15 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-primary">
           {tag}
         </span>
-        <h3 className="mt-4 text-xl font-bold text-secondary-foreground">{title}</h3>
-        <p className="mt-3 text-sm leading-relaxed text-secondary-foreground/70">
+        <h3 className="mt-4 text-xl font-bold text-foreground">{title}</h3>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
           {description}
         </p>
-        <ul className="mt-5 space-y-2 text-sm text-secondary-foreground/85">
+        <ul className="mt-5 space-y-2 text-sm text-foreground/85">
           {bullets.map((b) => (
             <li key={b} className="flex items-start gap-2">
               <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
