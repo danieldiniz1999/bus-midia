@@ -29,6 +29,7 @@ import clientGcNet from "../assets/clients/gcnet.png.asset.json";
 import clientSelfit from "../assets/clients/selfit.svg.asset.json";
 import clientTiradentes from "../assets/clients/tiradentes.png.asset.json";
 import clientUnifametro from "../assets/clients/unifametro.png.asset.json";
+import clientIdealAlimentos from "../assets/clients/ideal-alimentos.png.asset.json";
 import clientUnifanor from "../assets/clients/unifanor.png.asset.json";
 import clientBetNacional from "../assets/betnacional.png.asset.json";
 import clientPomar from "../assets/pomar.png.asset.json";
