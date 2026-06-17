@@ -786,16 +786,16 @@ function FAQ() {
   ];
 
   return (
-    <section id="faq" className="bg-secondary py-16">
+    <section id="faq" className="bg-muted/50 py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="mb-14 text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             Perguntas frequentes
           </span>
-          <h2 className="mt-3 text-4xl font-bold text-secondary-foreground sm:text-5xl">
+          <h2 className="mt-3 text-4xl font-bold text-foreground sm:text-5xl">
             Tudo o que você precisa saber
           </h2>
-          <p className="mt-4 text-base text-secondary-foreground/70">
+          <p className="mt-4 text-base text-muted-foreground">
             Não encontrou sua dúvida? Fale com a gente no WhatsApp.
           </p>
         </div>
@@ -804,9 +804,9 @@ function FAQ() {
           {faqs.map((item, i) => (
             <details
               key={i}
-              className="group rounded-2xl border border-primary/15 bg-background/5 px-6 py-5 backdrop-blur transition hover:border-primary/40 [&_summary::-webkit-details-marker]:hidden"
+              className="group rounded-2xl border border-primary/20 bg-background px-6 py-5 transition hover:border-primary/50 [&_summary::-webkit-details-marker]:hidden"
             >
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left text-base font-semibold text-secondary-foreground sm:text-lg">
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left text-base font-semibold text-foreground sm:text-lg">
                 <span>{item.q}</span>
                 <span
                   aria-hidden="true"
@@ -815,7 +815,7 @@ function FAQ() {
                   +
                 </span>
               </summary>
-              <p className="mt-4 text-sm leading-relaxed text-secondary-foreground/75 sm:text-base">
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 {item.a}
               </p>
             </details>
