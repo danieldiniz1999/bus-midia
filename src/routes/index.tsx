@@ -592,6 +592,7 @@ function Testimonials() {
       name: "Equipe de Mídia",
       role: "Apostas Esportivas",
       company: "Bet Nacional",
+      logo: clientBetNacional.url,
       quote:
         "Profissionalismo do briefing à instalação. Frota entregue no prazo e criativo respeitando 100% do manual de marca.",
       rating: 5,
@@ -608,11 +609,12 @@ function Testimonials() {
       name: "Marketing",
       role: "Varejo",
       company: "Pomar",
+      logo: clientPomar.url,
       quote:
         "Atendimento ágil e resultado visível. Renovamos a campanha porque o impacto nas ruas é real.",
       rating: 5,
     },
-  ];
+  ] as Array<{ name: string; role: string; company: string; quote: string; rating: number; logo?: string }>;
 
   const cases = [
     { brand: "Varejo", metric: "+38%", label: "fluxo em loja após 30 dias" },
