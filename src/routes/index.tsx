@@ -106,7 +106,7 @@ function LandingPage() {
 
 function Header() {
   return (
-    <header className="relative z-40 border-b border-black/10 bg-[#f5c518]">
+    <header className="relative z-40 border-b border-white/10 bg-[#0c1a2e]">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
         <a href="#top" className="flex items-center" aria-label="BusMidia - início">
           <img
@@ -115,19 +115,19 @@ function Header() {
             className="h-10 w-auto sm:h-12"
           />
         </a>
-        <nav className="hidden items-center gap-8 text-sm font-semibold text-black/75 md:flex">
-          <a href="#quem-somos" className="transition hover:text-black">Quem somos</a>
-          <a href="#formatos" className="transition hover:text-black">Formatos</a>
-          <a href="#beneficios" className="transition hover:text-black">Benefícios</a>
-          <a href="#depoimentos" className="transition hover:text-black">Depoimentos</a>
-          <a href="#faq" className="transition hover:text-black">FAQ</a>
-          <a href="#contato" className="transition hover:text-black">Contato</a>
+        <nav className="hidden items-center gap-8 text-sm font-medium text-white/70 md:flex">
+          <a href="#quem-somos" className="transition hover:text-white">Quem somos</a>
+          <a href="#formatos" className="transition hover:text-white">Formatos</a>
+          <a href="#beneficios" className="transition hover:text-white">Benefícios</a>
+          <a href="#depoimentos" className="transition hover:text-white">Depoimentos</a>
+          <a href="#faq" className="transition hover:text-white">FAQ</a>
+          <a href="#contato" className="transition hover:text-white">Contato</a>
         </nav>
         <a
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden items-center gap-2 rounded-full bg-black px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-black/85 sm:inline-flex"
+          className="hidden items-center gap-2 rounded-full bg-[#f5c518] px-5 py-2.5 text-sm font-semibold text-[#0c1a2e] transition hover:bg-[#ffd84d] sm:inline-flex"
         >
           <WhatsAppIcon className="h-4 w-4" />
           Orçamento
