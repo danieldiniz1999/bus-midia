@@ -372,14 +372,14 @@ function About() {
 
 function Formats() {
   return (
-    <section id="formatos" className="bg-secondary text-secondary-foreground">
+    <section id="formatos" className="bg-background text-foreground">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <SectionEyebrow tone="dark">Nossos formatos</SectionEyebrow>
+          <SectionEyebrow>Nossos formatos</SectionEyebrow>
           <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
             Busdoor e Backbus — dois jeitos de colocar sua marca em movimento.
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-base text-secondary-foreground/70">
+          <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground">
             Escolha o formato ideal para o seu objetivo. Ou combine os dois
             e amplie o impacto da sua campanha.
           </p>
