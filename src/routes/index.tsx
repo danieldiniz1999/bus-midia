@@ -486,26 +486,28 @@ function Benefits() {
     },
   ];
   return (
-    <section id="beneficios" className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-      <div className="mx-auto max-w-2xl text-center">
-        <SectionEyebrow>Por que anunciar com a gente</SectionEyebrow>
-        <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
-          Resultado que circula pela cidade inteira.
-        </h2>
-      </div>
-      <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {items.map(({ icon: Icon, title, text }) => (
-          <div
-            key={title}
-            className="group rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
-          >
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
-              <Icon className="h-6 w-6" />
+    <section id="beneficios" className="bg-secondary text-secondary-foreground">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <div className="mx-auto max-w-2xl text-center">
+          <SectionEyebrow tone="dark">Por que anunciar com a gente</SectionEyebrow>
+          <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
+            Resultado que circula pela cidade inteira.
+          </h2>
+        </div>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map(({ icon: Icon, title, text }) => (
+            <div
+              key={title}
+              className="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-primary/40"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
+                <Icon className="h-6 w-6" />
+              </div>
+              <h3 className="mt-5 text-lg font-bold text-secondary-foreground">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-secondary-foreground/70">{text}</p>
             </div>
-            <h3 className="mt-5 text-lg font-bold text-foreground">{title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
