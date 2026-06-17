@@ -26,9 +26,11 @@ import clientMirassol from "../assets/clients/mirassol.png.asset.json";
 import clientSelfit from "../assets/clients/selfit.svg.asset.json";
 import clientTiradentes from "../assets/clients/tiradentes.png.asset.json";
 import clientUnifametro from "../assets/clients/unifametro.png.asset.json";
+import clientUnifanor from "../assets/clients/unifanor.png.asset.json";
 
 const CLIENTS = [
   { name: "Selfit Academias", url: clientSelfit.url },
+  { name: "UNIFANOR Wyden", url: clientUnifanor.url },
   { name: "UNIFAMETRO", url: clientUnifametro.url },
   { name: "Colégio Tiradentes", url: clientTiradentes.url },
   { name: "Colégio Dom Quintino", url: clientDomQuintino.url },
