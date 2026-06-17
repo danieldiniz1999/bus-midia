@@ -614,6 +614,7 @@ function Testimonials() {
       name: "Coordenação de Marketing",
       role: "Educação",
       company: "Colégio Dom Quintino",
+      logo: clientDomQuintino.url,
       quote:
         "Na temporada de matrículas, o Busdoor foi decisivo para reforçar a marca nos bairros que queríamos atingir.",
       rating: 5,
@@ -622,6 +623,7 @@ function Testimonials() {
       name: "Marketing Institucional",
       role: "Ensino Superior",
       company: "Unifametro",
+      logo: clientUnifametro.url,
       quote:
         "Cobertura consistente nos corredores certos. O relatório fotográfico dá total transparência da veiculação.",
       rating: 5,
@@ -630,6 +632,7 @@ function Testimonials() {
       name: "Trade Marketing",
       role: "Indústria de Alimentos",
       company: "Ideal Alimentos",
+      logo: clientPomar.url,
       quote:
         "Excelente custo por impacto. Conseguimos ativar a marca em larga escala sem estourar o orçamento de mídia.",
       rating: 5,
