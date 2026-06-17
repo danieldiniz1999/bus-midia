@@ -529,18 +529,18 @@ function Clients() {
               "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
           }}
         >
-          <div className="flex w-max animate-[scroll_30s_linear_infinite] items-center group-hover:[animation-play-state:paused]">
+          <div className="flex w-max animate-[scroll_30s_linear_infinite] items-center gap-20 group-hover:[animation-play-state:paused]">
             {loop.map((c, i) => (
               <div
                 key={`${c.name}-${i}`}
-                className="flex h-24 w-52 shrink-0 items-center justify-center px-6"
+                className="flex h-16 w-32 shrink-0 items-center justify-center"
                 title={c.name}
               >
                 <img
                   src={c.url}
                   alt={c.name}
                   loading="lazy"
-                  className="h-14 w-auto max-w-full object-contain transition duration-300 hover:scale-110"
+                  className="max-h-full max-w-full object-contain transition duration-300 hover:scale-110"
                 />
               </div>
             ))}
