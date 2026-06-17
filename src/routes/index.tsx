@@ -284,7 +284,7 @@ function Stats() {
   const items = [
     { value: "+3.000", label: "projetos realizados", icon: Target },
     { value: "+250", label: "clientes atendidos", icon: Users },
-    { value: "+220", label: "marcas divulgadas", icon: TrendingUp },
+    { value: "+220", label: "marcas impactadas", icon: TrendingUp },
   ];
   return (
     <section className="border-y border-border bg-muted/50">
