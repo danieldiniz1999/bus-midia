@@ -234,9 +234,9 @@ function Hero() {
 
           <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
             {[
-              { v: "+3.000", l: "projetos" },
-              { v: "+250", l: "clientes" },
-              { v: "+220", l: "marcas" },
+              { v: "+3.000", l: "projetos realizados" },
+              { v: "+250", l: "clientes atendidos" },
+              { v: "+220", l: "marcas impactadas" },
             ].map((s) => (
               <div key={s.l}>
                 <dt className="text-2xl font-black text-primary sm:text-3xl">{s.v}</dt>
@@ -284,7 +284,7 @@ function Stats() {
   const items = [
     { value: "+3.000", label: "projetos realizados", icon: Target },
     { value: "+250", label: "clientes atendidos", icon: Users },
-    { value: "+220", label: "marcas divulgadas", icon: TrendingUp },
+    { value: "+220", label: "marcas impactadas", icon: TrendingUp },
   ];
   return (
     <section className="border-y border-border bg-muted/50">
