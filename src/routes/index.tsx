@@ -39,6 +39,8 @@ const CLIENTS = [
   
   { name: "GC Net", url: clientGcNet.url },
   { name: "Brayan Burguer", url: clientBrayan.url },
+  { name: "Bet Nacional", url: clientBetNacional.url },
+  { name: "Pomar", url: clientPomar.url },
 ];
 
 const LOGO_URL = logoAsset.url;
