@@ -613,7 +613,7 @@ function Clients() {
                   src={c.url}
                   alt={c.name}
                   loading="lazy"
-                  className="max-h-full max-w-full object-contain transition duration-300 hover:scale-110"
+                  className="logo-mono max-h-full max-w-full object-contain hover:scale-110"
                 />
               </div>
             ))}
