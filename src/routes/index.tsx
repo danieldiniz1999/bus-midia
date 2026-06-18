@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import heroBus from "../assets/hero-bus.jpg";
 import { Reveal } from "../components/Reveal";
+import { NumberTicker } from "../components/NumberTicker";
 import backbusImg from "../assets/backbus.jpg";
 import busdoorImg from "../assets/busdoor.jpg";
 import logoAsset from "../assets/busmidia-logo.webp.asset.json";
@@ -145,7 +146,11 @@ function Header() {
         </div>
         <nav className="hidden items-center gap-6 text-sm font-medium text-[#0c1a2e]/80 lg:flex xl:gap-8">
           {navItems.map((n) => (
-            <a key={n.href} href={n.href} className="transition hover:text-[#0c1a2e]">
+            <a
+              key={n.href}
+              href={n.href}
+              className="relative transition hover:text-[#0c1a2e] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:bg-[#f5c518] after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100"
+            >
               {n.label}
             </a>
           ))}
@@ -201,30 +206,42 @@ function Hero() {
 
       <div className="mx-auto grid max-w-7xl gap-14 px-4 py-20 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:py-28">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+          <span
+            className="inline-flex animate-rise-in items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary"
+            style={{ animationDelay: "0ms" }}
+          >
             <Sparkles className="h-3.5 w-3.5" />
             Publicidade em movimento
           </span>
 
-          <h1 className="mt-6 text-balance text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+          <h1
+            className="mt-6 animate-rise-in text-balance text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl"
+            style={{ animationDelay: "120ms" }}
+          >
             Sua marca rodando{" "}
             <span className="text-primary">Fortaleza inteira</span>{" "}
             todos os dias.
           </h1>
 
-          <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-secondary-foreground/75 sm:text-lg">
+          <p
+            className="mt-6 max-w-xl animate-rise-in text-pretty text-base leading-relaxed text-secondary-foreground/75 sm:text-lg"
+            style={{ animationDelay: "240ms" }}
+          >
             Há mais de uma década transformando ônibus em outdoors urbanos.
             Anuncie em <strong className="text-primary">Busdoor</strong> e{" "}
             <strong className="text-primary">Backbus</strong> e alcance
             milhares de pessoas por toda a cidade.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div
+            className="mt-8 flex animate-rise-in flex-wrap gap-3"
+            style={{ animationDelay: "360ms" }}
+          >
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:brightness-110"
+              className="btn-shimmer group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:brightness-110"
             >
               <WhatsAppIcon className="h-5 w-5" />
               Quero um orçamento
@@ -238,7 +255,10 @@ function Hero() {
             </a>
           </div>
 
-          <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
+          <dl
+            className="mt-12 grid animate-rise-in grid-cols-3 gap-6 border-t border-white/10 pt-8"
+            style={{ animationDelay: "480ms" }}
+          >
             {[
               { v: "+3.000", l: "projetos realizados" },
               { v: "+250", l: "clientes atendidos" },
@@ -288,25 +308,27 @@ function Hero() {
 
 function Stats() {
   const items = [
-    { value: "+3.000", label: "projetos realizados", icon: Target },
-    { value: "+250", label: "clientes atendidos", icon: Users },
-    { value: "+220", label: "marcas impactadas", icon: TrendingUp },
+    { value: 3000, prefix: "+", label: "projetos realizados", icon: Target },
+    { value: 250, prefix: "+", label: "clientes atendidos", icon: Users },
+    { value: 220, prefix: "+", label: "marcas impactadas", icon: TrendingUp },
   ];
   return (
     <section className="border-y border-border bg-muted/50">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 py-12 sm:grid-cols-3 sm:px-6">
-        {items.map(({ value, label, icon: Icon }) => (
+        {items.map(({ value, prefix, label, icon: Icon }) => (
           <div
             key={label}
-            className="flex items-center justify-center gap-4 rounded-2xl border border-border bg-background px-6 py-5 shadow-sm"
+            className="flex items-center justify-center gap-4 rounded-2xl border border-border bg-background px-6 py-5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary">
               <Icon className="h-6 w-6" />
             </div>
             <div>
-              <div className="text-2xl font-black leading-none text-foreground">
-                {value}
-              </div>
+              <NumberTicker
+                value={value}
+                prefix={prefix}
+                className="text-2xl font-black leading-none text-foreground"
+              />
               <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
                 {label}
               </div>
@@ -501,7 +523,7 @@ function Benefits() {
           {items.map(({ icon: Icon, title, text }) => (
             <div
               key={title}
-              className="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-primary/40"
+              className="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-white/10 hover:shadow-[0_20px_40px_-15px_rgba(245,197,24,0.35)]"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
                 <Icon className="h-6 w-6" />
@@ -591,7 +613,7 @@ function Clients() {
                   src={c.url}
                   alt={c.name}
                   loading="lazy"
-                  className="max-h-full max-w-full object-contain transition duration-300 hover:scale-110"
+                  className="logo-mono max-h-full max-w-full object-contain hover:scale-110"
                 />
               </div>
             ))}
@@ -693,7 +715,7 @@ function Testimonials() {
           {testimonials.map((t) => (
             <figure
               key={t.company}
-              className="group relative flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur transition hover:-translate-y-1 hover:border-primary/40"
+              className="group relative flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-white/10 hover:shadow-[0_20px_40px_-15px_rgba(245,197,24,0.35)]"
             >
               <Quote
                 className="absolute right-4 top-4 h-6 w-6 text-primary/20"
@@ -861,7 +883,7 @@ function FinalCTA() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:brightness-110"
+            className="btn-shimmer group mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:brightness-110"
           >
             <WhatsAppIcon className="h-5 w-5" />
             Falar no WhatsApp
