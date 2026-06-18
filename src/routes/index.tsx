@@ -883,7 +883,7 @@ function FinalCTA() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-shimmer group mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:brightness-110"
+            className="btn-shimmer group mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary hover:text-primary"
           >
             <WhatsAppIcon className="h-5 w-5" />
             Falar no WhatsApp
