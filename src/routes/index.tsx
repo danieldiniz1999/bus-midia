@@ -206,30 +206,42 @@ function Hero() {
 
       <div className="mx-auto grid max-w-7xl gap-14 px-4 py-20 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:py-28">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+          <span
+            className="inline-flex animate-rise-in items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary"
+            style={{ animationDelay: "0ms" }}
+          >
             <Sparkles className="h-3.5 w-3.5" />
             Publicidade em movimento
           </span>
 
-          <h1 className="mt-6 text-balance text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+          <h1
+            className="mt-6 animate-rise-in text-balance text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl"
+            style={{ animationDelay: "120ms" }}
+          >
             Sua marca rodando{" "}
             <span className="text-primary">Fortaleza inteira</span>{" "}
             todos os dias.
           </h1>
 
-          <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-secondary-foreground/75 sm:text-lg">
+          <p
+            className="mt-6 max-w-xl animate-rise-in text-pretty text-base leading-relaxed text-secondary-foreground/75 sm:text-lg"
+            style={{ animationDelay: "240ms" }}
+          >
             Há mais de uma década transformando ônibus em outdoors urbanos.
             Anuncie em <strong className="text-primary">Busdoor</strong> e{" "}
             <strong className="text-primary">Backbus</strong> e alcance
             milhares de pessoas por toda a cidade.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div
+            className="mt-8 flex animate-rise-in flex-wrap gap-3"
+            style={{ animationDelay: "360ms" }}
+          >
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:brightness-110"
+              className="btn-shimmer group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:brightness-110"
             >
               <WhatsAppIcon className="h-5 w-5" />
               Quero um orçamento
@@ -243,7 +255,10 @@ function Hero() {
             </a>
           </div>
 
-          <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
+          <dl
+            className="mt-12 grid animate-rise-in grid-cols-3 gap-6 border-t border-white/10 pt-8"
+            style={{ animationDelay: "480ms" }}
+          >
             {[
               { v: "+3.000", l: "projetos realizados" },
               { v: "+250", l: "clientes atendidos" },
