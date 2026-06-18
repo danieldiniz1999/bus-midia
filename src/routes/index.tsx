@@ -160,7 +160,7 @@ function Header() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-[#f5c518] px-3 py-2 text-xs font-semibold text-[#0c1a2e] transition hover:bg-[#ffd84d] sm:px-5 sm:py-2.5 sm:text-sm"
+            className="inline-flex items-center gap-2 rounded-full bg-[#f5c518] px-3 py-2 text-xs font-semibold text-[#0c1a2e] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0c1a2e] hover:text-[#f5c518] hover:shadow-md sm:px-5 sm:py-2.5 sm:text-sm"
           >
             <WhatsAppIcon className="h-4 w-4" />
             <span className="hidden xs:inline sm:inline">Orçamento</span>
@@ -241,7 +241,7 @@ function Hero() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-shimmer group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:brightness-110"
+              className="btn-shimmer group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary hover:text-primary"
             >
               <WhatsAppIcon className="h-5 w-5" />
               Quero um orçamento
@@ -249,7 +249,7 @@ function Hero() {
             </a>
             <a
               href="#formatos"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-base font-semibold text-secondary-foreground backdrop-blur transition hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-base font-semibold text-secondary-foreground backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:text-primary-foreground"
             >
               Ver formatos
             </a>
@@ -883,7 +883,7 @@ function FinalCTA() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-shimmer group mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:brightness-110"
+            className="btn-shimmer group mt-9 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary hover:text-primary"
           >
             <WhatsAppIcon className="h-5 w-5" />
             Falar no WhatsApp
