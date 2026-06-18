@@ -523,7 +523,7 @@ function Benefits() {
           {items.map(({ icon: Icon, title, text }) => (
             <div
               key={title}
-              className="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:-translate-y-1 hover:border-primary/40"
+              className="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-white/10 hover:shadow-[0_20px_40px_-15px_rgba(245,197,24,0.35)]"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
                 <Icon className="h-6 w-6" />
