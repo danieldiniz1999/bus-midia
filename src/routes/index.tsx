@@ -174,8 +174,8 @@ function Header() {
             {navItems.map((n, i) => (
               <li
                 key={n.href}
-                className="opacity-0 animate-fade-in"
-                style={{ animationDelay: `${i * 60}ms`, animationFillMode: "forwards" }}
+                className="animate-rise-in"
+                style={{ animationDelay: `${i * 60}ms` }}
               >
                 <a
                   href={n.href}
