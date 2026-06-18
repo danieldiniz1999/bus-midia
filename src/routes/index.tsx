@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import heroBus from "../assets/hero-bus.jpg";
 import { Reveal } from "../components/Reveal";
+import { NumberTicker } from "../components/NumberTicker";
 import backbusImg from "../assets/backbus.jpg";
 import busdoorImg from "../assets/busdoor.jpg";
 import logoAsset from "../assets/busmidia-logo.webp.asset.json";
