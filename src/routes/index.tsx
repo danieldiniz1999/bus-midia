@@ -93,15 +93,15 @@ function LandingPage() {
       <Header />
       <main>
         <Hero />
-        <Stats />
-        <About />
-        <Formats />
-        <Benefits />
-        <Process />
-        <Clients />
-        <Testimonials />
-        <FAQ />
-        <FinalCTA />
+        <Reveal><Stats /></Reveal>
+        <Reveal><About /></Reveal>
+        <Reveal><Formats /></Reveal>
+        <Reveal><Benefits /></Reveal>
+        <Reveal><Process /></Reveal>
+        <Reveal><Clients /></Reveal>
+        <Reveal><Testimonials /></Reveal>
+        <Reveal><FAQ /></Reveal>
+        <Reveal><FinalCTA /></Reveal>
       </main>
       <Footer />
       <FloatingWhatsApp />
