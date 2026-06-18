@@ -715,7 +715,7 @@ function Testimonials() {
           {testimonials.map((t) => (
             <figure
               key={t.company}
-              className="group relative flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur transition hover:-translate-y-1 hover:border-primary/40"
+              className="group relative flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-white/10 hover:shadow-[0_20px_40px_-15px_rgba(245,197,24,0.35)]"
             >
               <Quote
                 className="absolute right-4 top-4 h-6 w-6 text-primary/20"
