@@ -19,6 +19,7 @@ import {
   X,
 } from "lucide-react";
 import heroBus from "../assets/hero-bus.jpg";
+import { Reveal } from "../components/Reveal";
 import backbusImg from "../assets/backbus.jpg";
 import busdoorImg from "../assets/busdoor.jpg";
 import logoAsset from "../assets/busmidia-logo.webp.asset.json";
@@ -93,15 +94,15 @@ function LandingPage() {
       <Header />
       <main>
         <Hero />
-        <Stats />
-        <About />
-        <Formats />
-        <Benefits />
-        <Process />
-        <Clients />
-        <Testimonials />
-        <FAQ />
-        <FinalCTA />
+        <Reveal><Stats /></Reveal>
+        <Reveal><About /></Reveal>
+        <Reveal><Formats /></Reveal>
+        <Reveal><Benefits /></Reveal>
+        <Reveal><Process /></Reveal>
+        <Reveal><Clients /></Reveal>
+        <Reveal><Testimonials /></Reveal>
+        <Reveal><FAQ /></Reveal>
+        <Reveal><FinalCTA /></Reveal>
       </main>
       <Footer />
       <FloatingWhatsApp />
