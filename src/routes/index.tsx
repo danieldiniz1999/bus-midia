@@ -241,7 +241,7 @@ function Hero() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-shimmer group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition hover:brightness-110"
+              className="btn-shimmer group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-bold text-primary-foreground shadow-[var(--shadow-elegant)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary hover:text-primary"
             >
               <WhatsAppIcon className="h-5 w-5" />
               Quero um orçamento
@@ -249,7 +249,7 @@ function Hero() {
             </a>
             <a
               href="#formatos"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-base font-semibold text-secondary-foreground backdrop-blur transition hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-base font-semibold text-secondary-foreground backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:text-primary-foreground"
             >
               Ver formatos
             </a>
