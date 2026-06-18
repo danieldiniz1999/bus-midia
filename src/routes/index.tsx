@@ -146,7 +146,11 @@ function Header() {
         </div>
         <nav className="hidden items-center gap-6 text-sm font-medium text-[#0c1a2e]/80 lg:flex xl:gap-8">
           {navItems.map((n) => (
-            <a key={n.href} href={n.href} className="transition hover:text-[#0c1a2e]">
+            <a
+              key={n.href}
+              href={n.href}
+              className="relative transition hover:text-[#0c1a2e] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:bg-[#f5c518] after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100"
+            >
               {n.label}
             </a>
           ))}
