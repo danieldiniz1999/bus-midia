@@ -308,25 +308,27 @@ function Hero() {
 
 function Stats() {
   const items = [
-    { value: "+3.000", label: "projetos realizados", icon: Target },
-    { value: "+250", label: "clientes atendidos", icon: Users },
-    { value: "+220", label: "marcas impactadas", icon: TrendingUp },
+    { value: 3000, prefix: "+", label: "projetos realizados", icon: Target },
+    { value: 250, prefix: "+", label: "clientes atendidos", icon: Users },
+    { value: 220, prefix: "+", label: "marcas impactadas", icon: TrendingUp },
   ];
   return (
     <section className="border-y border-border bg-muted/50">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 py-12 sm:grid-cols-3 sm:px-6">
-        {items.map(({ value, label, icon: Icon }) => (
+        {items.map(({ value, prefix, label, icon: Icon }) => (
           <div
             key={label}
-            className="flex items-center justify-center gap-4 rounded-2xl border border-border bg-background px-6 py-5 shadow-sm"
+            className="flex items-center justify-center gap-4 rounded-2xl border border-border bg-background px-6 py-5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary">
               <Icon className="h-6 w-6" />
             </div>
             <div>
-              <div className="text-2xl font-black leading-none text-foreground">
-                {value}
-              </div>
+              <NumberTicker
+                value={value}
+                prefix={prefix}
+                className="text-2xl font-black leading-none text-foreground"
+              />
               <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
                 {label}
               </div>
