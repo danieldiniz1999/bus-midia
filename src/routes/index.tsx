@@ -171,12 +171,16 @@ function Header() {
       {open && (
         <nav className="border-t border-[#f5c518]/30 bg-white lg:hidden">
           <ul className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6">
-            {navItems.map((n) => (
-              <li key={n.href}>
+            {navItems.map((n, i) => (
+              <li
+                key={n.href}
+                className="opacity-0 animate-fade-in"
+                style={{ animationDelay: `${i * 60}ms`, animationFillMode: "forwards" }}
+              >
                 <a
                   href={n.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-lg px-3 py-3 text-base font-medium text-[#0c1a2e]/85 transition hover:bg-[#0c1a2e]/10 hover:text-[#0c1a2e]"
+                  className="group relative block overflow-hidden rounded-lg px-3 py-3 text-base font-medium text-[#0c1a2e]/85 transition-all duration-200 hover:bg-[#f5c518]/10 hover:text-[#0c1a2e] hover:pl-5 before:absolute before:left-0 before:top-1/2 before:h-6 before:w-1 before:-translate-y-1/2 before:scale-y-0 before:rounded-r-full before:bg-[#f5c518] before:transition-transform before:duration-200 hover:before:scale-y-100"
                 >
                   {n.label}
                 </a>
