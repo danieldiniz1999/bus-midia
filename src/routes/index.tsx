@@ -700,11 +700,6 @@ function Testimonials() {
     },
   ] as Array<{ name: string; role: string; company: string; quote: string; rating: number; logo?: string }>;
 
-  const cases = [
-    { brand: "Varejo", metric: "+38%", label: "fluxo em loja após 30 dias" },
-    { brand: "Imobiliário", metric: "2,1M", label: "impactos estimados/mês" },
-    { brand: "Educação", metric: "+62%", label: "buscas pela marca no período" },
-  ];
 
   return (
     <section id="depoimentos" className="bg-secondary text-secondary-foreground">
