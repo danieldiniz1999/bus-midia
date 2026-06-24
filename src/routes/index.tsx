@@ -106,6 +106,7 @@ function LandingPage() {
         <Reveal><Process /></Reveal>
         <Reveal><Clients /></Reveal>
         <Reveal><Testimonials /></Reveal>
+        <Reveal><Trust /></Reveal>
         <Reveal><FAQ /></Reveal>
         <Reveal><FinalCTA /></Reveal>
       </main>
