@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bus-midia.lovable.app/sitemap.xml
