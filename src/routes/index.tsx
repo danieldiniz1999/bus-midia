@@ -871,13 +871,13 @@ function Trust() {
   const pillars = [
     {
       icon: FileCheck2,
-      title: "Veiculação garantida em contrato",
-      text: "Prazo, rotas e quantidade de ônibus formalizados por escrito. Você sabe exatamente o que contratou.",
+      title: "Veiculação em contrato",
+      text: "Prazo, rotas e quantidade de ônibus formalizados por escrito antes do início da campanha.",
     },
     {
       icon: ShieldCheck,
-      title: "Reposição em caso de imprevisto",
-      text: "Se algum ônibus sair de circulação durante a campanha, fazemos a substituição para manter a entrega combinada.",
+      title: "Reposição garantida",
+      text: "Se algum ônibus sair de circulação durante a veiculação, fazemos a substituição sem custo extra.",
     },
     {
       icon: Camera,
@@ -886,40 +886,97 @@ function Trust() {
     },
     {
       icon: Handshake,
-      title: "Mais de 5 anos de mercado",
-      text: "Empresa consolidada, com processos claros e atendimento humano do início ao fim da campanha.",
+      title: "+5 anos de mercado",
+      text: "Empresa consolidada, com processos claros e atendimento humano em todas as etapas.",
     },
   ];
+  const promises = [
+    "Contrato formal com escopo claro de entrega",
+    "Acompanhamento da equipe durante toda a campanha",
+    "Substituição de veículo em caso de imprevisto",
+    "Comprovação fotográfica da veiculação",
+    "Atendimento direto, sem intermediários",
+  ];
   return (
-    <section id="garantia" className="bg-background">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <SectionEyebrow>Garantia e credibilidade</SectionEyebrow>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Sua marca em boas mãos.
+    <section id="garantia" className="relative overflow-hidden bg-secondary text-secondary-foreground">
+      {/* Decorative background */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 20% 10%, #f5c518 0, transparent 40%), radial-gradient(circle at 80% 80%, #f5c518 0, transparent 35%)",
+        }}
+      />
+      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24">
+        {/* Header */}
+        <div className="mx-auto max-w-3xl text-center">
+          <SectionEyebrow tone="dark">Garantia e credibilidade</SectionEyebrow>
+          <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
+            Sua marca em boas mãos,{" "}
+            <span className="text-primary">do contrato à comprovação</span>.
           </h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-            Trabalhamos com transparência em cada etapa: contrato formal, acompanhamento da campanha e comprovação do que foi entregue.
+          <p className="mt-5 text-base leading-relaxed text-secondary-foreground/75 sm:text-lg">
+            Transparência em cada etapa da campanha. Você sabe exatamente o que contratou,
+            acompanha a veiculação e recebe a comprovação do que foi entregue.
           </p>
         </div>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {pillars.map(({ icon: Icon, title, text }) => (
-            <div
-              key={title}
-              className="group rounded-2xl border border-foreground/10 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_20px_40px_-15px_rgba(245,197,24,0.45)]"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
-                <Icon className="h-6 w-6" />
-              </div>
-              <h3 className="mt-5 text-lg font-bold text-foreground">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+
+        {/* Featured promise panel */}
+        <div className="mt-14 grid gap-6 lg:grid-cols-5">
+          <div className="lg:col-span-2 rounded-3xl border border-primary/30 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent p-8 sm:p-10">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-[0_10px_30px_-10px_rgba(245,197,24,0.6)]">
+              <ShieldCheck className="h-7 w-7" />
             </div>
-          ))}
+            <h3 className="mt-6 text-2xl font-black sm:text-3xl">
+              O compromisso BusMídia
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-secondary-foreground/75 sm:text-base">
+              Mais do que vender espaço, garantimos o que foi combinado.
+              Tudo registrado em contrato e comprovado com relatório.
+            </p>
+            <ul className="mt-6 space-y-3">
+              {promises.map((p) => (
+                <li key={p} className="flex items-start gap-3 text-sm sm:text-base">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
+                  <span className="text-secondary-foreground/90">{p}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Pillars grid */}
+          <div className="lg:col-span-3 grid gap-5 sm:grid-cols-2">
+            {pillars.map(({ icon: Icon, title, text }) => (
+              <div
+                key={title}
+                className="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-white/10 hover:shadow-[0_20px_40px_-15px_rgba(245,197,24,0.35)]"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-5 text-lg font-bold">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-secondary-foreground/70">
+                  {text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Closing trust line */}
+        <div className="mt-12 flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-6 py-6 text-center sm:flex-row sm:gap-6 sm:text-left">
+          <Sparkles className="h-6 w-6 flex-shrink-0 text-primary" />
+          <p className="text-sm text-secondary-foreground/85 sm:text-base">
+            Cada campanha tem um responsável de plantão. Qualquer dúvida durante a veiculação,
+            você fala direto com quem cuida do seu projeto.
+          </p>
         </div>
       </div>
     </section>
   );
 }
+
 
 /* ---------------- Final CTA ---------------- */
 
