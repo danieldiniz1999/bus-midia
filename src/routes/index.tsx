@@ -865,6 +865,62 @@ function FAQ() {
   );
 }
 
+/* ---------------- Trust ---------------- */
+
+function Trust() {
+  const pillars = [
+    {
+      icon: FileCheck2,
+      title: "Veiculação garantida em contrato",
+      text: "Prazo, rotas e quantidade de ônibus formalizados por escrito. Você sabe exatamente o que contratou.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Reposição em caso de imprevisto",
+      text: "Se algum ônibus sair de circulação durante a campanha, fazemos a substituição para manter a entrega combinada.",
+    },
+    {
+      icon: Camera,
+      title: "Relatório fotográfico",
+      text: "Você recebe fotos da mídia rodando na rua, com a comprovação visual da veiculação.",
+    },
+    {
+      icon: Handshake,
+      title: "Mais de 5 anos de mercado",
+      text: "Empresa consolidada, com processos claros e atendimento humano do início ao fim da campanha.",
+    },
+  ];
+  return (
+    <section id="garantia" className="bg-background">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <div className="mx-auto max-w-2xl text-center">
+          <SectionEyebrow>Garantia e credibilidade</SectionEyebrow>
+          <h2 className="mt-3 text-3xl font-black tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            Sua marca em boas mãos.
+          </h2>
+          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+            Trabalhamos com transparência em cada etapa: contrato formal, acompanhamento da campanha e comprovação do que foi entregue.
+          </p>
+        </div>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {pillars.map(({ icon: Icon, title, text }) => (
+            <div
+              key={title}
+              className="group rounded-2xl border border-foreground/10 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_20px_40px_-15px_rgba(245,197,24,0.45)]"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
+                <Icon className="h-6 w-6" />
+              </div>
+              <h3 className="mt-5 text-lg font-bold text-foreground">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ---------------- Final CTA ---------------- */
 
 
