@@ -89,6 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: "Bus Mídia é especialista em Busdoor e Backbus. Amplie a visibilidade da sua marca com publicidade em ônibus, campanhas de alto impacto e cobertura estratégica p" },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/82d2546c-9dc5-4b6a-b1ef-361c5f41569c/id-preview-d9347e06--7365cbeb-a65f-4093-9f42-aee08ae1827e.lovable.app-1781664631827.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/82d2546c-9dc5-4b6a-b1ef-361c5f41569c/id-preview-d9347e06--7365cbeb-a65f-4093-9f42-aee08ae1827e.lovable.app-1781664631827.png" },
+      { name: "google-site-verification", content: "GYBTakUel8sWYO5SWvjx6KgR1udFP_0hiGk71pGTa_0" },
     ],
     links: [
       {
