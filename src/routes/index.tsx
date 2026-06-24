@@ -700,11 +700,6 @@ function Testimonials() {
     },
   ] as Array<{ name: string; role: string; company: string; quote: string; rating: number; logo?: string }>;
 
-  const cases = [
-    { brand: "Varejo", metric: "+38%", label: "fluxo em loja após 30 dias" },
-    { brand: "Imobiliário", metric: "2,1M", label: "impactos estimados/mês" },
-    { brand: "Educação", metric: "+62%", label: "buscas pela marca no período" },
-  ];
 
   return (
     <section id="depoimentos" className="bg-secondary text-secondary-foreground">
@@ -761,34 +756,6 @@ function Testimonials() {
           ))}
         </div>
 
-        <div className="mt-16">
-          <div className="mb-6 flex items-end justify-between gap-4">
-            <h3 className="text-xl font-bold text-secondary-foreground sm:text-2xl">
-              Cases em números
-            </h3>
-            <span className="hidden text-xs uppercase tracking-[0.25em] text-secondary-foreground/50 sm:inline">
-              Dados médios de campanhas recentes
-            </span>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-3">
-            {cases.map((c) => (
-              <div
-                key={c.brand}
-                className="rounded-2xl border border-primary/20 bg-gradient-to-br from-white/5 to-transparent p-7"
-              >
-                <div className="text-xs font-bold uppercase tracking-[0.25em] text-primary">
-                  {c.brand}
-                </div>
-                <div className="mt-3 text-4xl font-black text-secondary-foreground sm:text-5xl">
-                  {c.metric}
-                </div>
-                <div className="mt-2 text-sm text-secondary-foreground/70">
-                  {c.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
