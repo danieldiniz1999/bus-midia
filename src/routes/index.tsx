@@ -17,6 +17,10 @@ import {
   Quote,
   Menu,
   X,
+  ShieldCheck,
+  Camera,
+  FileCheck2,
+  Handshake,
 } from "lucide-react";
 import heroBus from "../assets/hero-bus.jpg";
 import { Reveal } from "../components/Reveal";
