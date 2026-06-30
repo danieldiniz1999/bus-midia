@@ -1,5 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import {
   MapPin,
   Phone,
@@ -16,7 +23,6 @@ import {
   Star,
   Quote,
   Menu,
-  X,
   ShieldCheck,
   Camera,
   FileCheck2,
@@ -120,6 +126,7 @@ function LandingPage() {
 
 function Header() {
   const [open, setOpen] = useState(false);
+  const [activeHash, setActiveHash] = useState<string>("");
   const navItems = [
     { href: "#quem-somos", label: "Quem somos" },
     { href: "#formatos", label: "Formatos" },
@@ -128,19 +135,59 @@ function Header() {
     { href: "#faq", label: "FAQ" },
     { href: "#contato", label: "Contato" },
   ];
+
+  useEffect(() => {
+    const update = () => setActiveHash(window.location.hash);
+    update();
+    window.addEventListener("hashchange", update);
+    return () => window.removeEventListener("hashchange", update);
+  }, []);
+
   return (
     <header className="relative z-40 border-b border-[#f5c518]/30 bg-white">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6">
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-[#0c1a2e] transition hover:bg-[#0c1a2e]/10 lg:hidden"
-            aria-label={open ? "Fechar menu" : "Abrir menu"}
-            aria-expanded={open}
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
+              <button
+                type="button"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full text-[#0c1a2e] transition hover:bg-[#0c1a2e]/10"
+                aria-label="Abrir menu"
+              >
+                <Menu className="h-5 w-5" />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-[300px] sm:w-[340px] bg-white p-0">
+              <SheetHeader className="border-b border-[#f5c518]/30 p-6">
+                <SheetTitle className="flex items-center">
+                  <img
+                    src={LOGO_URL}
+                    alt="BusMidia"
+                    className="h-10 w-auto"
+                  />
+                </SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-1 p-4">
+                {navItems.map((n) => {
+                  const isActive = activeHash === n.href;
+                  return (
+                    <a
+                      key={n.href}
+                      href={n.href}
+                      onClick={() => setOpen(false)}
+                      className={`group relative block overflow-hidden rounded-lg px-4 py-3 text-base font-medium transition-all duration-200 before:absolute before:left-0 before:top-1/2 before:h-6 before:w-1 before:-translate-y-1/2 before:rounded-r-full before:bg-[#f5c518] before:transition-transform before:duration-200 ${
+                        isActive
+                          ? "bg-[#f5c518]/15 text-[#0c1a2e] before:scale-y-100"
+                          : "text-[#0c1a2e]/85 before:scale-y-0 hover:bg-[#f5c518]/10 hover:text-[#0c1a2e] hover:pl-5 hover:before:scale-y-100"
+                      }`}
+                    >
+                      {n.label}
+                    </a>
+                  );
+                })}
+              </nav>
+            </SheetContent>
+          </Sheet>
           <a href="#top" className="flex shrink-0 items-center" aria-label="BusMidia - início">
             <img
               src={LOGO_URL}
@@ -149,17 +196,6 @@ function Header() {
             />
           </a>
         </div>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-[#0c1a2e]/80 lg:flex xl:gap-8">
-          {navItems.map((n) => (
-            <a
-              key={n.href}
-              href={n.href}
-              className="relative transition hover:text-[#0c1a2e] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:bg-[#f5c518] after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100"
-            >
-              {n.label}
-            </a>
-          ))}
-        </nav>
         <div className="flex items-center gap-2">
           <a
             href={WHATSAPP_URL}
@@ -172,28 +208,6 @@ function Header() {
           </a>
         </div>
       </div>
-
-      {open && (
-        <nav className="border-t border-[#f5c518]/30 bg-white lg:hidden">
-          <ul className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6">
-            {navItems.map((n, i) => (
-              <li
-                key={n.href}
-                className="animate-rise-in"
-                style={{ animationDelay: `${i * 60}ms` }}
-              >
-                <a
-                  href={n.href}
-                  onClick={() => setOpen(false)}
-                  className="group relative block overflow-hidden rounded-lg px-3 py-3 text-base font-medium text-[#0c1a2e]/85 transition-all duration-200 hover:bg-[#f5c518]/10 hover:text-[#0c1a2e] hover:pl-5 before:absolute before:left-0 before:top-1/2 before:h-6 before:w-1 before:-translate-y-1/2 before:scale-y-0 before:rounded-r-full before:bg-[#f5c518] before:transition-transform before:duration-200 hover:before:scale-y-100"
-                >
-                  {n.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
     </header>
   );
 }
