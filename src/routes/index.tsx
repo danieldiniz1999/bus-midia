@@ -23,7 +23,6 @@ import {
   Star,
   Quote,
   Menu,
-  X,
   ShieldCheck,
   Camera,
   FileCheck2,
