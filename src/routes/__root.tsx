@@ -6,11 +6,11 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -34,12 +34,9 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -78,20 +75,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Bus Mídia | Busdoor e Backbus para sua Empresa" },
-      { name: "description", content: "Bus Mídia é especialista em Busdoor e Backbus. Amplie a visibilidade da sua marca com publicidade em ônibus, campanhas de alto impacto e cobertura estratégica p" },
-      { name: "author", content: "Lovable" },
+      { name: "description", content: "Bus Mídia é especialista em Busdoor e Backbus. Amplie a visibilidade da sua marca com publicidade em ônibus, campanhas de alto impacto e cobertura estratégica." },
+      { name: "author", content: "Bus Mídia" },
       { property: "og:title", content: "Bus Mídia | Busdoor e Backbus para sua Empresa" },
-      { property: "og:description", content: "Bus Mídia é especialista em Busdoor e Backbus. Amplie a visibilidade da sua marca com publicidade em ônibus, campanhas de alto impacto e cobertura estratégica p" },
+      { property: "og:description", content: "Bus Mídia é especialista em Busdoor e Backbus. Amplie a visibilidade da sua marca com publicidade em ônibus, campanhas de alto impacto e cobertura estratégica." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Bus Mídia | Busdoor e Backbus para sua Empresa" },
-      { name: "twitter:description", content: "Bus Mídia é especialista em Busdoor e Backbus. Amplie a visibilidade da sua marca com publicidade em ônibus, campanhas de alto impacto e cobertura estratégica p" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/82d2546c-9dc5-4b6a-b1ef-361c5f41569c/id-preview-d9347e06--7365cbeb-a65f-4093-9f42-aee08ae1827e.lovable.app-1781664631827.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/82d2546c-9dc5-4b6a-b1ef-361c5f41569c/id-preview-d9347e06--7365cbeb-a65f-4093-9f42-aee08ae1827e.lovable.app-1781664631827.png" },
+      { name: "twitter:description", content: "Bus Mídia é especialista em Busdoor e Backbus. Amplie a visibilidade da sua marca com publicidade em ônibus, campanhas de alto impacto e cobertura estratégica." },
+      { property: "og:image", content: "/og-image.png" },
+      { name: "twitter:image", content: "/og-image.png" },
       { name: "google-site-verification", content: "GYBTakUel8sWYO5SWvjx6KgR1udFP_0hiGk71pGTa_0" },
     ],
     links: [
+      {
+        rel: "icon",
+        href: "/favicon.webp",
+        type: "image/webp",
+      },
       {
         rel: "stylesheet",
         href: appCss,

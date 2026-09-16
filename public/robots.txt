@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bus-midia.lovable.app/sitemap.xml
+Sitemap: https://bus-midia.vercel.app/sitemap.xml

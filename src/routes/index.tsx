@@ -33,34 +33,34 @@ import { Reveal } from "../components/Reveal";
 import { NumberTicker } from "../components/NumberTicker";
 import backbusImg from "../assets/backbus.jpg";
 import busdoorImg from "../assets/busdoor.jpg";
-import logoAsset from "../assets/busmidia-logo.webp.asset.json";
-import clientBrayan from "../assets/clients/brayan.png.asset.json";
-import clientDomQuintino from "../assets/clients/domquintino.png.asset.json";
-import clientGcNet from "../assets/clients/gcnet.png.asset.json";
+import logoAsset from "../assets/busmidia-logo.webp";
+import clientBrayan from "../assets/clients/brayan.png";
+import clientDomQuintino from "../assets/clients/domquintino.png";
+import clientGcNet from "../assets/clients/gcnet.png";
 
-import clientSelfit from "../assets/clients/selfit.svg.asset.json";
-import clientTiradentes from "../assets/clients/tiradentes.png.asset.json";
-import clientUnifametro from "../assets/clients/unifametro.png.asset.json";
-import clientIdealAlimentos from "../assets/clients/ideal-alimentos.png.asset.json";
-import clientUnifanor from "../assets/clients/unifanor.png.asset.json";
-import clientBetNacional from "../assets/betnacional.png.asset.json";
-import clientPomar from "../assets/pomar.png.asset.json";
+import clientSelfit from "../assets/clients/selfit.svg";
+import clientTiradentes from "../assets/clients/tiradentes.png";
+import clientUnifametro from "../assets/clients/unifametro.png";
+import clientIdealAlimentos from "../assets/clients/ideal-alimentos.png";
+import clientUnifanor from "../assets/clients/unifanor.png";
+import clientBetNacional from "../assets/betnacional.png";
+import clientPomar from "../assets/pomar.png";
 
 const CLIENTS = [
-  { name: "Selfit Academias", url: clientSelfit.url },
-  { name: "UNIFANOR Wyden", url: clientUnifanor.url },
-  { name: "UNIFAMETRO", url: clientUnifametro.url },
-  { name: "Colégio Tiradentes", url: clientTiradentes.url },
-  { name: "Colégio Dom Quintino", url: clientDomQuintino.url },
-  { name: "Ideal Alimentos", url: clientIdealAlimentos.url },
+  { name: "Selfit Academias", url: clientSelfit },
+  { name: "UNIFANOR Wyden", url: clientUnifanor },
+  { name: "UNIFAMETRO", url: clientUnifametro },
+  { name: "Colégio Tiradentes", url: clientTiradentes },
+  { name: "Colégio Dom Quintino", url: clientDomQuintino },
+  { name: "Ideal Alimentos", url: clientIdealAlimentos },
   
-  { name: "GC Net", url: clientGcNet.url },
-  { name: "Brayan Burguer", url: clientBrayan.url },
-  { name: "Bet Nacional", url: clientBetNacional.url },
-  { name: "Pomar", url: clientPomar.url },
+  { name: "GC Net", url: clientGcNet },
+  { name: "Brayan Burguer", url: clientBrayan },
+  { name: "Bet Nacional", url: clientBetNacional },
+  { name: "Pomar", url: clientPomar },
 ];
 
-const LOGO_URL = logoAsset.url;
+const LOGO_URL = logoAsset;
 const WHATSAPP_NUMBER = "5585987326044";
 const WHATSAPP_MESSAGE =
   "Olá, vim pelo site e quero fazer um orçamento de divulgação da minha marca/empresa";
@@ -662,7 +662,7 @@ function Testimonials() {
       name: "Coordenação de Marketing",
       role: "Educação",
       company: "Colégio Dom Quintino",
-      logo: clientDomQuintino.url,
+      logo: clientDomQuintino,
       quote:
         "Na temporada de matrículas, o Busdoor foi decisivo para reforçar a marca nos bairros que queríamos atingir.",
       rating: 5,
@@ -671,7 +671,7 @@ function Testimonials() {
       name: "Marketing Institucional",
       role: "Ensino Superior",
       company: "Unifametro",
-      logo: clientUnifametro.url,
+      logo: clientUnifametro,
       quote:
         "Cobertura consistente nos corredores certos. O relatório fotográfico dá total transparência da veiculação.",
       rating: 5,
@@ -680,7 +680,7 @@ function Testimonials() {
       name: "Trade Marketing",
       role: "Indústria de Alimentos",
       company: "Ideal Alimentos",
-      logo: clientIdealAlimentos.url,
+      logo: clientIdealAlimentos,
       quote:
         "Excelente custo por impacto. Conseguimos ativar a marca em larga escala sem estourar o orçamento de mídia.",
       rating: 5,
@@ -689,7 +689,7 @@ function Testimonials() {
       name: "Equipe de Mídia",
       role: "Apostas Esportivas",
       company: "Bet Nacional",
-      logo: clientBetNacional.url,
+      logo: clientBetNacional,
       quote:
         "Profissionalismo do briefing à instalação. Frota entregue no prazo e criativo respeitando 100% do manual de marca.",
       rating: 5,
@@ -698,7 +698,7 @@ function Testimonials() {
       name: "Marketing",
       role: "Telecom",
       company: "GC Net",
-      logo: clientGcNet.url,
+      logo: clientGcNet,
       quote:
         "Parceria que entrega. O Backbus ampliou nosso awareness nos bairros atendidos e gerou retorno em vendas.",
       rating: 5,
@@ -707,7 +707,7 @@ function Testimonials() {
       name: "Marketing",
       role: "Varejo",
       company: "Pomar",
-      logo: clientPomar.url,
+      logo: clientPomar,
       quote:
         "Atendimento ágil e resultado visível. Renovamos a campanha porque o impacto nas ruas é real.",
       rating: 5,

@@ -1,26 +1,44 @@
-# Bus Midia
+# Bus Mídia
 
-.
+Plataforma institucional e comercial da **Bus Mídia**, especialista em publicidade em ônibus (Busdoor e Backbus) em Fortaleza e região metropolitana.
 
-This project was built with [Lovable](https://lovable.dev).
+## Stack Tecnológica
 
-**Live app**: https://bus-midia.lovable.app
+- **Framework**: [React 19](https://react.dev/) + [TanStack Start](https://tanstack.com/start) & [TanStack Router](https://tanstack.com/router)
+- **Bundler & SSR Server**: [Vite](https://vitejs.dev/) + [Nitro](https://nitro.build/)
+- **Estilização**: [Tailwind CSS v4](https://tailwindcss.com/) + Lucide Icons + Radix UI
+- **Deploy**: [Vercel](https://vercel.com/) (Build Output API v3 com suporte a SSR e Fluid Compute)
 
-## Build with Lovable
+## Como Rodar Localmente
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/7365cbeb-a65f-4093-9f42-aee08ae1827e).
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/danieldiniz1999/bus-midia.git
+   cd bus-midia
+   ```
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-## Development
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+4. Para testar o build de produção:
+   ```bash
+   npm run build
+   npm run preview
+   ```
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+## Deploy na Vercel
+
+O projeto está configurado com preset nativo para **Vercel** via Nitro:
+
+1. Acesse o painel da [Vercel](https://vercel.com/).
+2. Clique em **Add New...** > **Project**.
+3. Importe o repositório `danieldiniz1999/bus-midia`.
+4. As configurações padrão de build (`npm run build`) e output (`.vercel/output`) serão detectadas automaticamente com zero configuração.
+5. Clique em **Deploy**.

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "https://bus-midia.lovable.app";
+const BASE_URL = process.env.SITE_URL || "https://bus-midia.vercel.app";
 
 interface SitemapEntry {
   path: string;
