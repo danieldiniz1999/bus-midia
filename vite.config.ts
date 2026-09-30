@@ -2,19 +2,22 @@ import { defineConfig } from "vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import tsconfigPaths from "vite-tsconfig-paths";
 import { nitro } from "nitro/vite";
 
 export default defineConfig({
   plugins: [
     tailwindcss(),
-    tsconfigPaths(),
     tanstackStart({
       server: { entry: "server" },
     }),
     nitro({
       preset: process.env.NITRO_PRESET || (process.env.VERCEL ? "vercel" : "vercel"),
       routeRules: {
+        "/assets/**": {
+          headers: {
+            "cache-control": "public, max-age=31536000, immutable",
+          },
+        },
         "/**": {
           headers: {
             "X-Content-Type-Options": "nosniff",
@@ -29,6 +32,7 @@ export default defineConfig({
     viteReact(),
   ],
   resolve: {
+    tsconfigPaths: true,
     dedupe: [
       "react",
       "react-dom",
@@ -37,5 +41,9 @@ export default defineConfig({
       "@tanstack/react-query",
       "@tanstack/query-core",
     ],
+  },
+  build: {
+    target: "es2022",
+    cssMinify: "lightningcss",
   },
 });

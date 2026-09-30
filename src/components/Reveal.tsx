@@ -29,7 +29,7 @@ export function Reveal({ children, delay = 0, className = "", as: Tag = "div" }:
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
     );
 
     observer.observe(node);
@@ -43,8 +43,8 @@ export function Reveal({ children, delay = 0, className = "", as: Tag = "div" }:
       style={{
         transitionDelay: `${delay}ms`,
       }}
-      className={`transition-all duration-700 ease-out will-change-transform ${
-        visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+      className={`transition-[opacity,transform] duration-700 ease-out ${
+        visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       } ${className}`}
     >
       {children}

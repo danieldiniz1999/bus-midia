@@ -28,11 +28,11 @@ import {
   FileCheck2,
   Handshake,
 } from "lucide-react";
-import heroBus from "../assets/hero-bus.jpg";
+import heroBus from "../assets/hero-bus.webp";
 import { Reveal } from "../components/Reveal";
 import { NumberTicker } from "../components/NumberTicker";
-import backbusImg from "../assets/backbus.jpg";
-import busdoorImg from "../assets/busdoor.jpg";
+import backbusImg from "../assets/backbus.webp";
+import busdoorImg from "../assets/busdoor.webp";
 import logoAsset from "../assets/busmidia-logo.webp";
 import clientBrayan from "../assets/clients/brayan.png";
 import clientDomQuintino from "../assets/clients/domquintino.png";
@@ -93,6 +93,14 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content: "Mídia em ônibus que coloca sua marca em movimento por toda Fortaleza.",
+      },
+    ],
+    links: [
+      {
+        rel: "preload",
+        as: "image",
+        href: heroBus,
+        type: "image/webp",
       },
     ],
   }),
@@ -306,6 +314,9 @@ function Hero() {
               className="aspect-[4/3] w-full object-cover"
               width={1536}
               height={1024}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
             />
           </div>
           <div className="absolute -bottom-6 left-6 right-6 rounded-2xl border border-primary/20 bg-background/95 p-5 shadow-xl backdrop-blur sm:left-10 sm:right-auto sm:w-72">
@@ -636,6 +647,9 @@ function Clients() {
                   src={c.url}
                   alt={c.name}
                   loading="lazy"
+                  decoding="async"
+                  width={144}
+                  height={80}
                   className="logo-mono max-h-full max-w-full object-contain hover:scale-110"
                 />
               </div>
@@ -646,8 +660,8 @@ function Clients() {
 
       <style>{`
         @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0% { transform: translate3d(0, 0, 0); }
+          100% { transform: translate3d(-50%, 0, 0); }
         }
       `}</style>
     </section>
@@ -753,6 +767,10 @@ function Testimonials() {
                     <img
                       src={t.logo}
                       alt={`Logo ${t.company}`}
+                      loading="lazy"
+                      decoding="async"
+                      width={40}
+                      height={40}
                       className="h-full w-full object-contain"
                     />
                   </div>
@@ -1017,6 +1035,10 @@ function Footer() {
           <img
             src={LOGO_URL}
             alt="BusMidia"
+            loading="lazy"
+            decoding="async"
+            width={160}
+            height={48}
             className="h-12 w-auto"
           />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-secondary-foreground/70">
